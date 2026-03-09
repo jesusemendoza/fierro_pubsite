@@ -1,0 +1,20 @@
+{
+  "name": "fierro-pubsite",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.18",
+    "tailwindcss": "^4.0",
+    "@tailwindcss/vite": "^4.0",
+    "@fontsource-variable/dm-sans": "^5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7"
+  }
+}
