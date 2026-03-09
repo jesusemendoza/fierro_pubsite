@@ -108,54 +108,54 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FNDN-01 | — | Pending |
-| FNDN-02 | — | Pending |
-| FNDN-03 | — | Pending |
-| FNDN-04 | — | Pending |
-| FNDN-05 | — | Pending |
-| NAV-01 | — | Pending |
-| NAV-02 | — | Pending |
-| NAV-03 | — | Pending |
-| NAV-04 | — | Pending |
-| LAND-01 | — | Pending |
-| LAND-02 | — | Pending |
-| LAND-03 | — | Pending |
-| LAND-04 | — | Pending |
-| LAND-05 | — | Pending |
-| LAND-06 | — | Pending |
-| LAND-07 | — | Pending |
-| LAND-08 | — | Pending |
-| LAND-09 | — | Pending |
-| PRIC-01 | — | Pending |
-| PRIC-02 | — | Pending |
-| PRIC-03 | — | Pending |
-| PRIC-04 | — | Pending |
-| PRIC-05 | — | Pending |
-| PRIC-06 | — | Pending |
-| PRIC-07 | — | Pending |
-| WHY-01 | — | Pending |
-| WHY-02 | — | Pending |
-| WHY-03 | — | Pending |
-| WHY-04 | — | Pending |
-| LEGL-01 | — | Pending |
-| LEGL-02 | — | Pending |
-| PERF-01 | — | Pending |
-| PERF-02 | — | Pending |
-| PERF-03 | — | Pending |
-| PERF-04 | — | Pending |
-| PERF-05 | — | Pending |
-| PERF-06 | — | Pending |
-| PERF-07 | — | Pending |
-| PERF-08 | — | Pending |
-| DOCS-01 | — | Pending |
-| DOCS-02 | — | Pending |
-| DOCS-03 | — | Pending |
+| FNDN-01 | Phase 1 | Pending |
+| FNDN-02 | Phase 1 | Pending |
+| FNDN-03 | Phase 1 | Pending |
+| FNDN-04 | Phase 1 | Pending |
+| FNDN-05 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Pending |
+| NAV-02 | Phase 1 | Pending |
+| NAV-03 | Phase 1 | Pending |
+| NAV-04 | Phase 1 | Pending |
+| LAND-01 | Phase 2 | Pending |
+| LAND-02 | Phase 2 | Pending |
+| LAND-03 | Phase 2 | Pending |
+| LAND-04 | Phase 2 | Pending |
+| LAND-05 | Phase 2 | Pending |
+| LAND-06 | Phase 2 | Pending |
+| LAND-07 | Phase 2 | Pending |
+| LAND-08 | Phase 2 | Pending |
+| LAND-09 | Phase 2 | Pending |
+| PRIC-01 | Phase 3 | Pending |
+| PRIC-02 | Phase 3 | Pending |
+| PRIC-03 | Phase 3 | Pending |
+| PRIC-04 | Phase 3 | Pending |
+| PRIC-05 | Phase 3 | Pending |
+| PRIC-06 | Phase 3 | Pending |
+| PRIC-07 | Phase 3 | Pending |
+| WHY-01 | Phase 3 | Pending |
+| WHY-02 | Phase 3 | Pending |
+| WHY-03 | Phase 3 | Pending |
+| WHY-04 | Phase 3 | Pending |
+| LEGL-01 | Phase 4 | Pending |
+| LEGL-02 | Phase 4 | Pending |
+| PERF-04 | Phase 4 | Pending |
+| PERF-05 | Phase 4 | Pending |
+| PERF-06 | Phase 4 | Pending |
+| PERF-07 | Phase 4 | Pending |
+| DOCS-01 | Phase 4 | Pending |
+| DOCS-02 | Phase 4 | Pending |
+| DOCS-03 | Phase 4 | Pending |
+| PERF-01 | Phase 5 | Pending |
+| PERF-02 | Phase 5 | Pending |
+| PERF-03 | Phase 5 | Pending |
+| PERF-08 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 39 total
-- Mapped to phases: 0
-- Unmapped: 39 ⚠️
+- v1 requirements: 42 total
+- Mapped to phases: 42
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-09*
-*Last updated: 2026-03-09 after initial definition*
+*Last updated: 2026-03-09 after roadmap creation*
