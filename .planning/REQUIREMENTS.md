@@ -7,11 +7,11 @@
 
 ### Foundation
 
-- [ ] **FNDN-01**: Project scaffolded with Astro 5, Tailwind CSS v4 (via `@tailwindcss/vite`), and self-hosted DM Sans font
-- [ ] **FNDN-02**: Brand design tokens defined in CSS `@theme` using OKLch color space — Gunmetal, Molten Orange, Off-White, Concrete Gray, Rebar Green, Overrun Red
-- [ ] **FNDN-03**: Base layout with View Transitions, responsive meta viewport, and favicon
+- [x] **FNDN-01**: Project scaffolded with Astro 5, Tailwind CSS v4 (via `@tailwindcss/vite`), and self-hosted DM Sans font
+- [x] **FNDN-02**: Brand design tokens defined in CSS `@theme` using OKLch color space — Gunmetal, Molten Orange, Off-White, Concrete Gray, Rebar Green, Overrun Red
+- [x] **FNDN-03**: Base layout with View Transitions, responsive meta viewport, and favicon
 - [ ] **FNDN-04**: Site deployed to Cloudflare Workers Static Assets with getfierro.com custom domain
-- [ ] **FNDN-05**: All images stored in `src/assets/` and served via Astro's built-in image optimization (WebP/AVIF)
+- [x] **FNDN-05**: All images stored in `src/assets/` and served via Astro's built-in image optimization (WebP/AVIF)
 
 ### Navigation & Chrome
 
@@ -108,11 +108,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FNDN-01 | Phase 1 | Pending |
-| FNDN-02 | Phase 1 | Pending |
-| FNDN-03 | Phase 1 | Pending |
+| FNDN-01 | Phase 1 | Complete |
+| FNDN-02 | Phase 1 | Complete |
+| FNDN-03 | Phase 1 | Complete |
 | FNDN-04 | Phase 1 | Pending |
-| FNDN-05 | Phase 1 | Pending |
+| FNDN-05 | Phase 1 | Complete |
 | NAV-01 | Phase 1 | Pending |
 | NAV-02 | Phase 1 | Pending |
 | NAV-03 | Phase 1 | Pending |
