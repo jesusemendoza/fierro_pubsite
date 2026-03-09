@@ -30,11 +30,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A footer with Product, Company, and Legal link columns renders at the bottom of every page
   4. "Login" link navigates to app.getfierro.com/login and "Start Free" navigates to app.getfierro.com/signup
   5. The site is deployed to Cloudflare Workers Static Assets (not deprecated Pages) and a `git push` triggers a build-and-deploy pipeline
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Scaffold Astro 5 project with Tailwind v4, DM Sans, brand tokens, and BaseLayout
+- [ ] 01-02-PLAN.md -- Build Nav, MobileMenu, Footer components and all 5 stub pages
+- [ ] 01-03-PLAN.md -- Configure Cloudflare Workers deployment and Playwright test suite
 
 ### Phase 2: Landing Page
 **Goal**: A complete homepage that communicates Fierro's value to construction professionals, showcases the product, and drives visitors toward signup
@@ -105,7 +106,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation and Site Chrome | 0/0 | Not started | - |
+| 1. Foundation and Site Chrome | 0/3 | Planning complete | - |
 | 2. Landing Page | 0/0 | Not started | - |
 | 3. Pricing and Why Fierro | 0/0 | Not started | - |
 | 4. Legal, SEO, and Documentation | 0/0 | Not started | - |
