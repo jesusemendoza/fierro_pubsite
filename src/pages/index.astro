@@ -1,13 +1,11 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fierro</title>
-  </head>
-  <body class="bg-off-white text-gunmetal font-sans">
-    <h1>Fierro</h1>
-  </body>
-</html>
+<BaseLayout title="Home">
+  <section class="flex min-h-screen items-center justify-center">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold text-gunmetal">Fierro</h1>
+      <p class="mt-4 text-lg text-concrete-gray">Coming soon</p>
+    </div>
+  </section>
+</BaseLayout>
