@@ -26,9 +26,9 @@ Scaffold an Astro 5 project with Tailwind CSS v4, self-hosted DM Sans, and brand
 - Same link styling as desktop (white text, orange hover)
 
 ### Logo treatment
-- User will provide a logo file (SVG expected)
+- Logo SVG pulled from getfierro.com and saved at `src/assets/logo.svg` (uses `currentColor` fill with `viewBox="58 93 285 213"`)
 - Logo keeps brand colors on dark backgrounds (not inverted to all-white)
-- Favicon derived from the logo mark/icon portion
+- Favicon (48x48 PNG) pulled from getfierro.com and saved at `src/assets/favicon.ico`
 
 ### Footer design
 - Off-White (#F5F4F0) background with subtle top border
@@ -66,7 +66,8 @@ Scaffold an Astro 5 project with Tailwind CSS v4, self-hosted DM Sans, and brand
 ## Existing Code Insights
 
 ### Reusable Assets
-- No existing code — greenfield project
+- `src/assets/logo.svg` — Fierro logo (SVG, uses `currentColor` fill)
+- `src/assets/favicon.ico` — Fierro favicon (48x48 PNG)
 
 ### Established Patterns
 - fierro_web uses OKLch color tokens in CSS variables (e.g. `oklch(0.62 0.19 48)` for Molten Orange) — adopt same values for brand consistency
