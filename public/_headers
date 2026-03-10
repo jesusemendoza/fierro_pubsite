@@ -1,3 +1,23 @@
+# Hashed assets (CSS, JS, fonts in /_astro/) -- immutable, cache 1 year
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages -- always revalidate for instant deploys
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# OG images -- cache 1 week (unhashed but rarely change)
+/og/*
+  Cache-Control: public, max-age=604800
+
+# Favicon -- cache 1 month
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+# Security headers (all responses)
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff

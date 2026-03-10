@@ -61,6 +61,7 @@ import logoSrc from '../assets/logo.svg';
       type="button"
       class="flex min-h-[44px] min-w-[44px] items-center justify-center md:hidden"
       aria-label="Toggle menu"
+      aria-expanded="false"
     >
       <svg
         class="h-6 w-6 text-white"
@@ -100,13 +101,39 @@ import logoSrc from '../assets/logo.svg';
     const openMenu = () => {
       mobileMenu?.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
+      toggle?.setAttribute('aria-expanded', 'true');
+      menuClose?.focus();
     };
     const closeMenu = () => {
       mobileMenu?.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.focus();
     };
     toggle?.addEventListener('click', openMenu);
     menuClose?.addEventListener('click', closeMenu);
+
+    // Escape key closes mobile menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
+
+    // Focus trap within mobile menu
+    mobileMenu?.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = mobileMenu.querySelectorAll('a, button');
+      const first = focusable[0] as HTMLElement;
+      const last = focusable[focusable.length - 1] as HTMLElement;
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
 
     // Close mobile menu when a link is clicked
     mobileMenu?.querySelectorAll('a').forEach(link => {

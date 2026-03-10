@@ -10,10 +10,32 @@ dist/
 # environment
 .env
 .env.*
+!.env.example
 
 # os
 .DS_Store
+Thumbs.db
 
 # editor
 .vscode/
 *.swp
+*.swo
+.idea/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# playwright
+test-results/
+playwright-report/
+blob-report/
+
+# wrangler
+.wrangler/
+.dev.vars
+
+# lighthouse ci
+.lighthouseci/
