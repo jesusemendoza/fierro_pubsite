@@ -6,9 +6,7 @@
     "not_found_handling": "404-page"
   },
   "routes": [
-    {
-      "pattern": "getfierro.com",
-      "custom_domain": true
-    }
+    { "pattern": "getfierro.com/*", "zone_name": "getfierro.com" },
+    { "pattern": "www.getfierro.com/*", "zone_name": "getfierro.com" }
   ]
 }
