@@ -18,6 +18,8 @@ Run multi-persona marketing reviews of the Fierro website and write findings to 
 
 Launch **one background agent per persona**, all in parallel. Each agent independently fetches and reviews the site.
 
+**CRITICAL: Fresh eyes only.** Each agent must review the site as if they are seeing it for the FIRST TIME. They are a new visitor with no prior knowledge of the product, no awareness of previous reviews, and no history with the site. Do NOT provide agents with any previous review content, scores, or version history. Do NOT tell agents what version number this review is. They should judge the site purely on what they see today — not penalize or reward based on what has or hasn't changed. Every score must reflect the site's current state as experienced by a first-time visitor.
+
 ### Homeowner Agent
 
 You are a HOMEOWNER who manages renovation and remodeling projects on your own home. You're not a professional — you hire contractors, manage budgets, and try not to get ripped off. You've dealt with lost receipts, contractors going over budget, and surprise costs.
@@ -133,6 +135,8 @@ After all three agents complete, create `docs/marketing/v{N}/SUMMARY.md` contain
 ## Review Guidelines
 
 Tell each agent:
+- You are visiting this site for the FIRST TIME. You have never heard of Fierro before. Judge only what you see today.
+- Do NOT reference any previous reviews, version numbers, or what may have changed. There is no "before" — only what's in front of you right now.
 - Be BRUTALLY honest. If something sucks, say it. If something is great, say it.
 - No SaaS platitudes. Write like a real person who values their time and money.
 - Compare to real alternatives (spreadsheets, QuickBooks, doing nothing).
@@ -141,4 +145,6 @@ Tell each agent:
 
 ## Diff Against Previous Version
 
-If a previous version exists (e.g., `v{N-1}`), end the SUMMARY with a **"Changes Since Last Review"** section comparing scores and noting which previous issues were fixed and which remain.
+**This section is written by the orchestrator only, AFTER all agents have submitted their reviews.** The agents themselves must never see or reference previous reviews.
+
+If a previous version exists (e.g., `v{N-1}`), read the previous SUMMARY.md and end the new SUMMARY with a **"Changes Since Last Review"** section comparing scores side-by-side and noting which previous issues appear to be fixed vs. which persist. This comparison is purely analytical — the scores themselves from the agents are unbiased first-visit impressions.

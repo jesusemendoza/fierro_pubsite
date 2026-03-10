@@ -23,7 +23,48 @@ import { screenshotUrl } from '../../utils/screenshot';
         alt="Fierro budget tracking view with 6 categories like Electrical and Plumbing, each showing dollar amounts spent vs. remaining with color-coded progress bars and percentage indicators"
       />
 
-      <!-- Row 2: AI Integration (the differentiator) -->
+      <!-- Row 2: Expense Management (the daily workflow) -->
+      <FeatureRow
+        title="Expense Management"
+        description="Every receipt, every invoice, every payment — in one place. Stop losing track of what you've paid."
+        bullets={[
+          "Snap receipts on your phone at the store or job site",
+          "Attach contractor invoices to the right budget category",
+          "Review and approve expenses before they pile up"
+        ]}
+        reverse={true}
+        imageUrl={screenshotUrl('desktop/homeowner-expenses.webp')}
+        alt="Fierro expense list showing 12 logged expenses with receipt photo thumbnails, vendor names like Home Depot and ABC Plumbing, approval status badges, dollar amounts, and category tags"
+      />
+
+      <!-- Row 3: Team Management (collaboration) -->
+      <FeatureRow
+        title="Team Management"
+        description="Share access with your contractor, designer, or spouse. Everyone sees what they need."
+        bullets={[
+          "Your contractor logs expenses, you approve them — no more chasing invoices",
+          "Invite people with different permission levels",
+          "See who spent what, when, from anywhere"
+        ]}
+        imageUrl={screenshotUrl('desktop/homeowner-team.webp')}
+        alt="Fierro team management panel showing project members with roles — homeowner as Owner, general contractor, electrician, and plumber — each with permission levels and expense submission counts"
+      />
+
+      <!-- Row 4: Analytics & Reporting (the payoff) -->
+      <FeatureRow
+        title="Analytics &amp; Reporting"
+        description="See the big picture before small problems become big ones."
+        bullets={[
+          "Visual dashboard showing your budget health at a glance",
+          "Export as CSV or PDF — give your accountant clean data at tax time",
+          "Spot trends — is your electrical always running over?"
+        ]}
+        reverse={true}
+        imageUrl={screenshotUrl('desktop/homeowner-audit.webp')}
+        alt="Fierro analytics dashboard showing budget health summary, spending trends over time chart, category breakdown with top spend areas highlighted, and exportable report options for CSV and PDF"
+      />
+
+      <!-- Row 5: AI Integration (the differentiator) -->
       <FeatureRow
         title="AI Tool Integration"
         description="Fierro connects to ChatGPT and your AI-powered workflows — so you can get budget insights, flag problems, and generate reports using your own project data."
@@ -32,7 +73,6 @@ import { screenshotUrl } from '../../utils/screenshot';
           "Generate cost summaries for your partner, lender, or accountant in seconds",
           "With premium tiers, you control what AI can see and do — read-only, read & write, or fully configurable per project"
         ]}
-        reverse={true}
       >
         <div class="rounded-lg shadow-xl bg-gunmetal p-6 sm:p-8">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" class="w-full h-auto" aria-label="ChatGPT asking Fierro about project budget">
@@ -72,46 +112,6 @@ import { screenshotUrl } from '../../utils/screenshot';
           </svg>
         </div>
       </FeatureRow>
-
-      <!-- Row 3: Expense Management (the daily workflow) -->
-      <FeatureRow
-        title="Expense Management"
-        description="Every receipt, every invoice, every payment — in one place. Stop losing track of what you've paid."
-        bullets={[
-          "Snap receipts on your phone at the store or job site",
-          "Attach contractor invoices to the right budget category",
-          "Review and approve expenses before they pile up"
-        ]}
-        imageUrl={screenshotUrl('desktop/homeowner-expenses.webp')}
-        alt="Fierro expense list showing 12 logged expenses with receipt photo thumbnails, vendor names like Home Depot and ABC Plumbing, approval status badges, dollar amounts, and category tags"
-      />
-
-      <!-- Row 4: Team Management (collaboration) -->
-      <FeatureRow
-        title="Team Management"
-        description="Share access with your contractor, designer, or spouse. Everyone sees what they need."
-        bullets={[
-          "Invite people with different permission levels",
-          "Your contractor logs expenses, you approve them",
-          "See who spent what, when, from anywhere"
-        ]}
-        reverse={true}
-        imageUrl={screenshotUrl('desktop/homeowner-team.webp')}
-        alt="Fierro team management panel showing project members with roles — homeowner as Owner, general contractor, electrician, and plumber — each with permission levels and expense submission counts"
-      />
-
-      <!-- Row 5: Analytics & Reporting (the payoff) -->
-      <FeatureRow
-        title="Analytics &amp; Reporting"
-        description="See the big picture before small problems become big ones."
-        bullets={[
-          "Visual dashboard showing your budget health at a glance",
-          "Export reports for your partner, lender, or accountant",
-          "Spot trends — is your electrical always running over?"
-        ]}
-        imageUrl={screenshotUrl('desktop/homeowner-audit.webp')}
-        alt="Fierro analytics dashboard showing budget health summary, spending trends over time chart, category breakdown with top spend areas highlighted, and exportable report options for CSV and PDF"
-      />
 
       <!-- Row 6: Vendor Management (power feature) -->
       <FeatureRow

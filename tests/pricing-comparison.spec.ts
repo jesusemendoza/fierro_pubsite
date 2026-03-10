@@ -35,6 +35,6 @@ test.describe('Pricing - Comparison Table (PRIC-04)', () => {
 
   test('table has at least 8 rows of feature data', async ({ page }) => {
     const dataRows = page.locator('tbody tr');
-    await expect(dataRows).toHaveCount(14);
+    await expect(dataRows).toHaveCount(15);
   });
 });
