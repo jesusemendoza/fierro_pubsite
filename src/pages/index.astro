@@ -37,14 +37,31 @@ import ClosingCta from '../components/landing/ClosingCta.astro';
           "lowPrice": "0",
           "highPrice": "49",
           "priceCurrency": "USD",
-          "offerCount": "3",
+          "offerCount": "4",
           "offers": [
             {
               "@type": "Offer",
               "name": "Free",
               "price": "0",
               "priceCurrency": "USD",
-              "description": "For solo contractors getting started. 1 project, 6 sub-projects, 3 team members."
+              "description": "Free to start. 1 project, 6 sub-projects, 3 team members."
+            },
+            {
+              "@type": "Offer",
+              "name": "Home",
+              "price": "20",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "20",
+                "priceCurrency": "USD",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": "1",
+                  "unitCode": "MON"
+                }
+              },
+              "description": "For homeowners managing a renovation or remodel. 2 projects, 15 sub-projects, 5 team members."
             },
             {
               "@type": "Offer",
@@ -61,7 +78,7 @@ import ClosingCta from '../components/landing/ClosingCta.astro';
                   "unitCode": "MON"
                 }
               },
-              "description": "For growing teams managing multiple jobs. 5 projects, 20 sub-projects, 10 team members."
+              "description": "For flippers and investors managing multiple properties. 5 projects, 20 sub-projects, 10 team members."
             },
             {
               "@type": "Offer",

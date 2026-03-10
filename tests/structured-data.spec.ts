@@ -40,16 +40,17 @@ test.describe('JSON-LD Structured Data (PERF-06)', () => {
     expect(app.name).toBe('Fierro');
   });
 
-  test('SoftwareApplication has offers with 3 pricing tiers', async ({ page }) => {
+  test('SoftwareApplication has offers with 4 pricing tiers', async ({ page }) => {
     await page.goto('/');
     const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
     const data = JSON.parse(jsonLd!);
     const app = data['@graph'].find((item: any) => item['@type'] === 'SoftwareApplication');
     expect(app.offers).toBeTruthy();
-    expect(app.offers.offers).toHaveLength(3);
+    expect(app.offers.offers).toHaveLength(4);
 
     const tierNames = app.offers.offers.map((o: any) => o.name);
     expect(tierNames).toContain('Free');
+    expect(tierNames).toContain('Home');
     expect(tierNames).toContain('Plus');
     expect(tierNames).toContain('Builder');
   });

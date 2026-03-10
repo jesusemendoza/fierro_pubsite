@@ -10,8 +10,9 @@ test.describe('Pricing - Tier Cards (PRIC-01, PRIC-02, PRIC-06)', () => {
     expect(response?.status()).toBe(200);
   });
 
-  test('three tier cards visible with names Free, Plus, Builder', async ({ page }) => {
+  test('four tier cards visible with names Free, Home, Plus, Builder', async ({ page }) => {
     await expect(page.locator('h3', { hasText: 'Free' })).toBeVisible();
+    await expect(page.locator('h3', { hasText: 'Home' })).toBeVisible();
     await expect(page.locator('h3', { hasText: 'Plus' })).toBeVisible();
     await expect(page.locator('h3', { hasText: 'Builder' })).toBeVisible();
   });
@@ -33,11 +34,13 @@ test.describe('Pricing - Tier Cards (PRIC-01, PRIC-02, PRIC-06)', () => {
     await expect(builderCard.locator('p', { hasText: 'Custom' })).toBeVisible();
   });
 
-  test('competitive messaging text "No sales calls required" is visible', async ({ page }) => {
-    await expect(page.locator('text=No sales calls required')).toBeVisible();
+  test('Home card shows "$20" price', async ({ page }) => {
+    const homePrice = page.locator('[data-price-monthly="$20"]');
+    await expect(homePrice).toBeVisible();
+    await expect(homePrice).toContainText('$20');
   });
 
-  test('competitive messaging text "No hidden fees" is visible', async ({ page }) => {
-    await expect(page.locator('text=No hidden fees')).toBeVisible();
+  test('competitive messaging text "No sales calls" is visible in subtitle', async ({ page }) => {
+    await expect(page.locator('text=No sales calls')).toBeVisible();
   });
 });

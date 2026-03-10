@@ -31,19 +31,17 @@ test.describe('Landing Page - Sections', () => {
     await expect(steps).toHaveCount(3);
   });
 
-  // LAND-07: Persona callouts SKIPPED -- verify not present
-  test('no persona callout section exists (deferred)', async ({ page }) => {
-    const personas = page.locator('[data-testid="personas"], .persona-callouts');
-    await expect(personas).toHaveCount(0);
-    await expect(page.locator('text=For General Contractors')).toHaveCount(0);
-    await expect(page.locator('text=For Subcontractors')).toHaveCount(0);
-    await expect(page.locator('text=For Project Owners')).toHaveCount(0);
+  // LAND-07: Audience section with project types
+  test('audience section shows project types', async ({ page }) => {
+    await expect(page.locator('h2', { hasText: 'Built for every kind of project' })).toBeVisible();
+    await expect(page.locator('h3', { hasText: 'Homeowners & DIYers' })).toBeVisible();
+    await expect(page.locator('h3', { hasText: 'Flippers & Investors' })).toBeVisible();
+    await expect(page.locator('h3', { hasText: 'Real Estate Teams' })).toBeVisible();
   });
 
   // LAND-08: Closing CTA
   test('closing CTA has Start Free button linking to signup', async ({ page }) => {
-    // The ClosingCta section is the last <section> on the page
-    const closingCta = page.locator('section').last().locator('a[href="https://app.getfierro.com/signup"]');
+    const closingCta = page.locator('[data-testid="closing-cta"]').locator('a[href="https://app.getfierro.com/signup"]');
     await expect(closingCta).toBeVisible();
     await expect(closingCta).toContainText('Start Free');
   });

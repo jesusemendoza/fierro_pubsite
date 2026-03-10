@@ -21,30 +21,30 @@ test.describe('Why Fierro - WHY-01: Pain-first narrative structure', () => {
       await expect(page.getByTestId(`pain-section-${i}`)).toBeVisible();
     }
     // Verify the 4 pain-point problem headings specifically
-    await expect(page.getByText('Your PM approved a change order')).toBeVisible();
-    await expect(page.getByText('You thought the job was profitable')).toBeVisible();
-    await expect(page.getByText('Your investors are asking for updates')).toBeVisible();
-    await expect(page.getByText("Your tools don't talk to each other")).toBeVisible();
+    await expect(page.getByText('Your contractor sent you a bill')).toBeVisible();
+    await expect(page.getByText('You set a budget but you have no idea')).toBeVisible();
+    await expect(page.getByText('You didn\'t realize the flip was over budget')).toBeVisible();
+    await expect(page.getByText('Your partner asked for a project update')).toBeVisible();
   });
 
-  test('pain section content includes "change order" text', async ({ page }) => {
-    await expect(page.getByTestId('pain-section-0')).toContainText('change order');
+  test('pain section content includes "contractor" text', async ({ page }) => {
+    await expect(page.getByTestId('pain-section-0')).toContainText('contractor');
   });
 
-  test('pain section content includes "profitable" text', async ({ page }) => {
-    await expect(page.getByTestId('pain-section-1')).toContainText('profitable');
+  test('pain section content includes "budget" text', async ({ page }) => {
+    await expect(page.getByTestId('pain-section-1')).toContainText('budget');
   });
 
-  test('pain section content includes "investors" or "stakeholders" text', async ({ page }) => {
+  test('pain section content includes "flip" or "overruns" text', async ({ page }) => {
     const text = await page.getByTestId('pain-section-2').textContent();
-    const hasInvestors = text?.includes('investors') || text?.includes('stakeholders');
-    expect(hasInvestors).toBe(true);
+    const hasFlipContent = text?.includes('flip') || text?.includes('overruns');
+    expect(hasFlipContent).toBe(true);
   });
 
   test('AI integration section is visible with "AI" in heading text', async ({ page }) => {
     const aiSection = page.getByTestId('ai-section');
     await expect(aiSection).toBeVisible();
-    await expect(aiSection.getByRole('heading', { name: 'Built for the AI Era' })).toBeVisible();
+    await expect(aiSection.getByRole('heading', { name: 'Smart Budget Insights' })).toBeVisible();
   });
 });
 

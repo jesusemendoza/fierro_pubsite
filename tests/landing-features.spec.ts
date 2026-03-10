@@ -26,10 +26,10 @@ test.describe('Landing Page - Feature Showcase', () => {
     await expect(section.locator('h3', { hasText: /analytics|reporting/i })).toBeVisible();
   });
 
-  test('each feature has an SVG illustration', async ({ page }) => {
+  test('each feature has a screenshot image', async ({ page }) => {
     const section = page.locator('#features');
-    const svgs = section.locator('svg');
-    const count = await svgs.count();
+    const imgs = section.locator('img');
+    const count = await imgs.count();
     expect(count).toBeGreaterThanOrEqual(5);
   });
 

@@ -24,14 +24,13 @@ test.describe('Pricing - FAQ Section (PRIC-05)', () => {
     await expect(firstAnswer).toBeVisible();
   });
 
-  test('FAQ contains text about "spreadsheets"', async ({ page }) => {
-    await expect(page.locator('text=spreadsheets')).toBeTruthy();
-    const spreadsheetQuestion = page.locator('summary', { hasText: 'spreadsheets' });
+  test('FAQ contains question about "spreadsheet"', async ({ page }) => {
+    const spreadsheetQuestion = page.locator('summary', { hasText: 'spreadsheet' });
     await expect(spreadsheetQuestion).toBeVisible();
   });
 
-  test('FAQ contains text about "existing tools"', async ({ page }) => {
-    const toolsQuestion = page.locator('summary', { hasText: 'existing tools' });
-    await expect(toolsQuestion).toBeVisible();
+  test('FAQ contains question about "contractor"', async ({ page }) => {
+    const contractorQuestion = page.locator('summary', { hasText: 'contractor' });
+    await expect(contractorQuestion).toBeVisible();
   });
 });

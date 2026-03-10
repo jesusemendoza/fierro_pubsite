@@ -13,12 +13,12 @@ test.describe('Landing Page - Hero Section', () => {
   });
 
   test('hero displays headline text', async ({ page }) => {
-    await expect(page.locator('h1')).toContainText('Every dollar. Every pour. Accounted for.');
+    await expect(page.locator('h1')).toContainText('Know exactly where your money goes');
   });
 
-  test('hero contains SVG illustration', async ({ page }) => {
-    const heroSvg = page.locator('section').first().locator('svg');
-    await expect(heroSvg.first()).toBeVisible();
+  test('hero contains screenshot image', async ({ page }) => {
+    const heroImg = page.locator('section').first().locator('img');
+    await expect(heroImg.first()).toBeVisible();
   });
 
   // LAND-02: Two CTAs above the fold

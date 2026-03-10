@@ -11,6 +11,14 @@ test.describe('Pricing - Toggle & CTAs (PRIC-03, PRIC-07)', () => {
     await expect(page.locator('[data-label="annual"]')).toBeVisible();
   });
 
+  test('clicking toggle changes Home price from "$20" to "$16"', async ({ page }) => {
+    const homePrice = page.locator('[data-price-monthly="$20"]');
+    await expect(homePrice).toContainText('$20');
+
+    await page.locator('button[role="switch"]').click();
+    await expect(homePrice).toContainText('$16');
+  });
+
   test('clicking toggle changes Plus price from "$49" to "$39"', async ({ page }) => {
     const plusPrice = page.locator('[data-price-monthly="$49"]');
     await expect(plusPrice).toContainText('$49');
@@ -25,7 +33,7 @@ test.describe('Pricing - Toggle & CTAs (PRIC-03, PRIC-07)', () => {
 
     await page.locator('button[role="switch"]').click();
     await expect(savings).toBeVisible();
-    await expect(savings).toContainText('Save $118/year');
+    await expect(savings).toContainText('Save up to $118/year');
   });
 
   test('clicking toggle again reverts to monthly prices', async ({ page }) => {
@@ -42,6 +50,11 @@ test.describe('Pricing - Toggle & CTAs (PRIC-03, PRIC-07)', () => {
   test('Free tier "Start Free" CTA links to app.getfierro.com/signup', async ({ page }) => {
     const cta = page.locator('a[data-billing-link]', { hasText: 'Start Free' });
     await expect(cta).toHaveAttribute('href', 'https://app.getfierro.com/signup');
+  });
+
+  test('Home CTA default href contains "plan=home&billing=monthly"', async ({ page }) => {
+    const cta = page.locator('a', { hasText: 'Start Home' });
+    await expect(cta).toHaveAttribute('href', /plan=home&billing=monthly/);
   });
 
   test('Plus CTA default href contains "plan=plus&billing=monthly"', async ({ page }) => {
