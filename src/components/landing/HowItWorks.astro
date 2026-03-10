@@ -1,0 +1,37 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Create Your Budget",
+    description: "Set up your project, define line items, and set your targets. Five minutes and you're tracking."
+  },
+  {
+    number: "2",
+    title: "Track Every Expense",
+    description: "Log costs from the field or office. Receipts, invoices, change orders -- all in one place."
+  },
+  {
+    number: "3",
+    title: "Stay Profitable",
+    description: "See your true costs in real time. Catch overruns before they eat your margin."
+  }
+];
+---
+
+<section id="how-it-works" class="bg-gunmetal py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="mb-12 text-center text-3xl font-bold text-off-white" data-animate>
+      Get started in three steps
+    </h2>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-animate-stagger>
+      {steps.map((step) => (
+        <div class="text-center" data-animate>
+          <span class="text-5xl font-bold text-molten-orange">{step.number}</span>
+          <h3 class="mt-4 text-xl font-bold text-off-white">{step.title}</h3>
+          <p class="mt-2 text-off-white/70">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
