@@ -1,11 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/landing/Hero.astro';
+import ValueProps from '../components/landing/ValueProps.astro';
+import FeatureShowcase from '../components/landing/FeatureShowcase.astro';
+import HowItWorks from '../components/landing/HowItWorks.astro';
+import ClosingCta from '../components/landing/ClosingCta.astro';
 ---
-<BaseLayout title="Home">
-  <section class="flex min-h-[60vh] items-center justify-center pt-20">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold text-gunmetal">Every dollar. Every pour. Accounted for.</h1>
-      <p class="mt-4 text-lg text-concrete-gray">The full landing page is coming soon.</p>
-    </div>
-  </section>
+
+<BaseLayout title="Construction Cost Control">
+  <noscript>
+    <style>
+      [data-animate] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <Hero />
+  <ValueProps />
+  <FeatureShowcase />
+  <HowItWorks />
+  <ClosingCta />
 </BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const targets = document.querySelectorAll('[data-animate]');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  });
+</script>
