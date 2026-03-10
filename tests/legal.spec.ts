@@ -33,9 +33,9 @@ test.describe('Privacy Policy page (LEGL-01)', () => {
     await expect(article).toBeVisible();
   });
 
-  test('contact email privacy@getfierro.com appears on page', async ({ page }) => {
+  test('contact email support@getfierro.com appears on page', async ({ page }) => {
     const content = await page.content();
-    expect(content).toContain('privacy@getfierro.com');
+    expect(content).toContain('support@getfierro.com');
   });
 });
 

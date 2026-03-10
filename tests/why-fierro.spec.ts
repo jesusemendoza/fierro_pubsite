@@ -40,7 +40,7 @@ test.describe('Why Fierro - WHY-01: Pain-first narrative structure', () => {
   });
 
   test('AI integration section is visible with "AI" in heading text', async ({ page }) => {
-    const aiHeading = page.locator('h2', { hasText: 'AI' });
+    const aiHeading = page.getByRole('heading', { name: 'Built for the AI Era' });
     await expect(aiHeading).toBeVisible();
   });
 });

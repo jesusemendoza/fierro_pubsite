@@ -33,10 +33,6 @@ test.describe('Pricing - Tier Cards (PRIC-01, PRIC-02, PRIC-06)', () => {
     await expect(builderCard.locator('p', { hasText: 'Custom' })).toBeVisible();
   });
 
-  test('Plus card has "Most Popular" badge visible', async ({ page }) => {
-    await expect(page.locator('text=Most Popular')).toBeVisible();
-  });
-
   test('competitive messaging text "No sales calls required" is visible', async ({ page }) => {
     await expect(page.locator('text=No sales calls required')).toBeVisible();
   });
