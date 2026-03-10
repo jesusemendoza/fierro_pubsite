@@ -32,7 +32,7 @@ Two new pages replacing stubs: /pricing with transparent three-tier pricing, int
 ### Feature comparison table
 - Key differentiators only — 8-12 rows covering main differences (project limits, team members, sub-projects, analytics, vendor management, support level)
 - Show actual limits ("1 project", "5 projects", "Unlimited") not checkmarks
-- AI/MCP integration listed as available on ALL tiers — it's a platform differentiator, not a paywall feature
+- AI/MCP integration tiered: Free = limited (basic access), Plus & Builder = fully configurable. Show this distinction in the comparison table row
 
 ### Why Fierro narrative
 - Pain-first structure (WHY-01): problem → why it happens → how Fierro fixes it
