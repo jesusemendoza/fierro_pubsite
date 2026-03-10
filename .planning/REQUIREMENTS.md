@@ -65,6 +65,10 @@
 - [x] **PERF-07**: Sitemap generated at build time
 - [x] **PERF-08**: Responsive design — mobile-first, works across all screen sizes, WCAG AA contrast ratios
 
+### CI/CD
+
+- [ ] **CICD-01**: GitHub Actions workflow that builds and deploys to Cloudflare Workers on push to main, using `cloudflare/wrangler-action@v3` with `CLOUDFLARE_API_TOKEN` secret
+
 ### Documentation
 
 - [x] **DOCS-01**: `docs/DEPLOYMENT.md` — Cloudflare Workers Static Assets setup, build commands, CI/CD pipeline
@@ -150,10 +154,11 @@
 | PERF-02 | Phase 5 | Complete |
 | PERF-03 | Phase 5 | Complete |
 | PERF-08 | Phase 5 | Complete |
+| CICD-01 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 42 total
-- Mapped to phases: 42
+- v1 requirements: 43 total
+- Mapped to phases: 43
 - Unmapped: 0
 
 ---

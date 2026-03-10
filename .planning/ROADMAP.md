@@ -18,6 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 4: Legal, SEO, and Documentation** - Privacy/Terms pages, comprehensive SEO pass, and deployment/migration docs
 - [ ] **Phase 5: Performance Audit and Launch Polish** - Lighthouse 95+ validation, 3G performance verification, JS audit, and responsive/accessibility confirmation
 - [ ] **Phase 6: Phase 1 Traceability Closure** - Create missing Phase 1 documentation artifacts (01-02-SUMMARY.md, VERIFICATION.md) and update REQUIREMENTS.md for NAV-01–04
+- [ ] **Phase 7: CI/CD Pipeline and Initial Deploy** - GitHub Actions workflow for automated Cloudflare Workers deployment on push to main, plus first production deploy
 
 ## Phase Details
 
@@ -118,6 +119,17 @@ Plans:
 Plans:
 - [ ] 06-01-PLAN.md -- Create 01-02-SUMMARY.md, Phase 1 VERIFICATION.md, and update REQUIREMENTS.md
 
+### Phase 7: CI/CD Pipeline and Initial Deploy
+**Goal**: A push to main automatically builds and deploys the site to Cloudflare Workers, and the site is live at getfierro.com
+**Depends on**: Phase 6
+**Requirements**: CICD-01
+**Success Criteria** (what must be TRUE):
+  1. `.github/workflows/deploy.yml` exists with a GitHub Actions workflow that builds and deploys on push to main
+  2. The workflow uses `cloudflare/wrangler-action@v3` with a `CLOUDFLARE_API_TOKEN` secret
+  3. A push to main triggers the workflow and the site is deployed to Cloudflare Workers
+  4. getfierro.com loads the site successfully
+**Plans**: TBD
+
 ## Progress
 
 **Execution Order:**
@@ -131,3 +143,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
 | 5. Performance Audit and Launch Polish | 0/2 | Planning complete | - |
 | 6. Phase 1 Traceability Closure | 0/1 | Planning complete | - |
+| 7. CI/CD Pipeline and Initial Deploy | 0/0 | Not planned | - |
