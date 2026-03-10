@@ -47,11 +47,12 @@ Plans:
   3. A "How It Works" 3-step walkthrough and role-based persona callouts (GC, Sub, Owner) are visible below the feature showcase
   4. A closing CTA banner with "Start Free" button appears at the bottom of the page content
   5. Sections animate into view on scroll using CSS-only animations (no JavaScript)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- Animation CSS infrastructure, Hero section, and Value Proposition cards
+- [ ] 02-02-PLAN.md -- Feature showcase with 5 alternating rows, How It Works walkthrough, and Closing CTA
+- [ ] 02-03-PLAN.md -- Page assembly (index.astro composition + IntersectionObserver) and Playwright test suite
 
 ### Phase 3: Pricing and Why Fierro
 **Goal**: Visitors can evaluate Fierro's pricing transparently and read a persuasive, builder-voiced narrative explaining why Fierro exists and what makes it different
@@ -107,7 +108,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Site Chrome | 0/3 | Planning complete | - |
-| 2. Landing Page | 0/0 | Not started | - |
+| 2. Landing Page | 0/3 | Planning complete | - |
 | 3. Pricing and Why Fierro | 0/0 | Not started | - |
 | 4. Legal, SEO, and Documentation | 0/0 | Not started | - |
 | 5. Performance Audit and Launch Polish | 0/0 | Not started | - |
