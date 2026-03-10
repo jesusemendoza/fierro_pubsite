@@ -24,6 +24,24 @@ const tiers = [
     builder: false,
   },
   {
+    name: 'Home',
+    price: { monthly: '$20', annual: '$16' },
+    period: '/mo',
+    description: 'For homeowners managing a renovation or remodel',
+    cta: { text: 'Start Home', href: 'https://app.getfierro.com/signup?plan=home&billing=monthly' },
+    features: [
+      '2 projects',
+      '15 sub-projects per project',
+      '5 team members',
+      'Advanced expense tracking',
+      'Receipt photo capture',
+      'Budget alerts',
+      'Email support',
+    ],
+    highlighted: true,
+    builder: false,
+  },
+  {
     name: 'Plus',
     price: { monthly: '$49', annual: '$39' },
     period: '/mo',
@@ -38,7 +56,7 @@ const tiers = [
       'Fully configurable AI/MCP',
       'Priority support',
     ],
-    highlighted: true,
+    highlighted: false,
     builder: false,
   },
   {
@@ -64,7 +82,7 @@ const tiers = [
 
 <BaseLayout
   title="Pricing"
-  description="Simple, transparent pricing for construction teams. Start free, upgrade to Plus at $49/mo when you're ready. No sales calls required."
+  description="Free for your first project. Home tier at $20/mo for renovations. Plus at $49/mo for investors and flippers. No sales calls, no hidden fees."
   ogImage="/og/pricing.png"
 >
   <noscript>
@@ -77,10 +95,10 @@ const tiers = [
   <section class="bg-gunmetal pt-28 pb-16 lg:pb-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-3xl font-bold text-off-white sm:text-4xl lg:text-5xl" data-animate>
-        Simple, Transparent Pricing
+        Plans That Fit Your Project
       </h1>
       <p class="mt-4 text-lg text-off-white/70 max-w-2xl mx-auto" data-animate>
-        No sales calls required. No hidden fees. Start free, upgrade when you're ready.
+        Tracking a kitchen remodel? Free. Managing a portfolio of flips? $49/mo. No sales calls, no surprises.
       </p>
       <div class="mt-8" data-animate>
         <PricingToggle />
@@ -90,8 +108,8 @@ const tiers = [
 
   <!-- Tier cards section -->
   <section class="bg-off-white py-16 lg:py-24">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate-stagger>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-animate-stagger>
         {tiers.map((tier) => (
           <TierCard {...tier} />
         ))}

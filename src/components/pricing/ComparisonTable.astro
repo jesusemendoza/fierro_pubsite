@@ -1,15 +1,16 @@
 ---
 const features = [
-  { name: 'Projects', free: '1', plus: '5', builder: 'Unlimited' },
-  { name: 'Sub-projects per project', free: '6', plus: '20', builder: 'Unlimited' },
-  { name: 'Team members', free: '3', plus: '10', builder: 'Unlimited' },
-  { name: 'Expense tracking', free: 'Basic', plus: 'Advanced', builder: 'Advanced' },
-  { name: 'Budget analytics', free: 'Summary', plus: 'Detailed reports', builder: 'Custom dashboards' },
-  { name: 'Vendor management', free: '--', plus: 'Included', builder: 'Included' },
-  { name: 'AI/MCP integration', free: 'Limited', plus: 'Fully configurable', builder: 'Fully configurable' },
-  { name: 'API access', free: '--', plus: '--', builder: 'Included' },
-  { name: 'Custom integrations', free: '--', plus: '--', builder: 'Included' },
-  { name: 'Support', free: 'Community', plus: 'Priority', builder: 'Dedicated account manager' },
+  { name: 'Projects', free: '1', home: '2', plus: '5', builder: 'Unlimited' },
+  { name: 'Sub-projects per project', free: '6', home: '15', plus: '20', builder: 'Unlimited' },
+  { name: 'Team members', free: '3', home: '5', plus: '10', builder: 'Unlimited' },
+  { name: 'Expense tracking', free: 'Basic', home: 'Advanced', plus: 'Advanced', builder: 'Advanced' },
+  { name: 'Receipt photo capture', free: '\u2014', home: 'Included', plus: 'Included', builder: 'Included' },
+  { name: 'Budget analytics', free: 'Summary', home: 'Visual dashboard', plus: 'Detailed reports', builder: 'Custom dashboards' },
+  { name: 'Budget alerts', free: '\u2014', home: 'Included', plus: 'Included', builder: 'Included' },
+  { name: 'Vendor management', free: '\u2014', home: '\u2014', plus: 'Included', builder: 'Included' },
+  { name: 'AI insights', free: 'Limited', home: 'Basic', plus: 'Fully configurable', builder: 'Fully configurable' },
+  { name: 'API access', free: '\u2014', home: '\u2014', plus: '\u2014', builder: 'Included' },
+  { name: 'Support', free: 'Community', home: 'Email', plus: 'Priority', builder: 'Dedicated manager' },
 ];
 ---
 
@@ -19,6 +20,7 @@ const features = [
       <tr class="border-b-2 border-gunmetal/10">
         <th class="px-4 py-3 font-semibold text-gunmetal text-base">Feature</th>
         <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Free</th>
+        <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Home</th>
         <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Plus</th>
         <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Builder</th>
       </tr>
@@ -31,6 +33,7 @@ const features = [
         ]}>
           <td class="px-4 py-3 font-medium text-gunmetal">{feature.name}</td>
           <td class="px-4 py-3 text-concrete-gray text-center">{feature.free}</td>
+          <td class="px-4 py-3 text-concrete-gray text-center">{feature.home}</td>
           <td class="px-4 py-3 text-concrete-gray text-center">{feature.plus}</td>
           <td class="px-4 py-3 text-concrete-gray text-center">{feature.builder}</td>
         </tr>

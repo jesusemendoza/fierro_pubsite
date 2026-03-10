@@ -38,7 +38,12 @@ const { name, price, period, description, cta, features, highlighted, builder } 
           {price.monthly}
         </p>
         <span class="text-sm text-concrete-gray">{period}</span>
-        {highlighted && (
+        {name === 'Home' && (
+          <span class="text-xs text-concrete-gray block mt-1 hidden" data-annual-note>
+            billed annually at $192
+          </span>
+        )}
+        {name === 'Plus' && (
           <span class="text-xs text-concrete-gray block mt-1 hidden" data-annual-note>
             billed annually at $470
           </span>
