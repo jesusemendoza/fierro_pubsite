@@ -9,7 +9,7 @@ test.describe('Base Layout (FNDN-03)', () => {
 
   test('page has favicon link', async ({ page }) => {
     await page.goto('/');
-    const favicon = page.locator('link[rel="icon"]');
+    const favicon = page.locator('link[rel="icon"]').first();
     await expect(favicon).toHaveAttribute('href', /favicon/);
   });
 
