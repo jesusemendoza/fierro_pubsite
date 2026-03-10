@@ -64,11 +64,11 @@ Plans:
   3. A feature comparison table and FAQ section appear below the tier cards, answering common pricing questions with competitive messaging ("No sales calls required")
   4. The /why-fierro page presents a pain-first narrative (problem, why it happens, how Fierro fixes it, proof) written in direct, construction-vocabulary builder voice with quantified ROI claims
   5. Both pages end with a clear CTA driving visitors to app.getfierro.com/signup
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Pricing page: tier cards, monthly/annual toggle, comparison table, FAQ, and Playwright tests
+- [ ] 03-02-PLAN.md -- Why Fierro page: pain-first narrative, AI integration section, and Playwright tests
 
 ### Phase 4: Legal, SEO, and Documentation
 **Goal**: The site has complete legal pages, comprehensive search engine optimization across all pages, and internal documentation covering deployment and migration procedures
@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation and Site Chrome | 0/3 | Planning complete | - |
 | 2. Landing Page | 0/3 | Planning complete | - |
-| 3. Pricing and Why Fierro | 0/0 | Not started | - |
+| 3. Pricing and Why Fierro | 0/2 | Planning complete | - |
 | 4. Legal, SEO, and Documentation | 0/0 | Not started | - |
 | 5. Performance Audit and Launch Polish | 0/0 | Not started | - |
