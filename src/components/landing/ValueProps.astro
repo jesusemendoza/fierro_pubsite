@@ -1,0 +1,64 @@
+---
+const valueProps = [
+  {
+    title: "Real-Time Cost Visibility",
+    description: "See every dollar across every project as it happens, not after the damage is done.",
+    icon: "dollar",
+  },
+  {
+    title: "Zero Budget Surprises",
+    description: "Track costs against budgets before overruns become change orders.",
+    icon: "chart",
+  },
+  {
+    title: "Field + Office in One App",
+    description: "Capture expenses on the job site, review reports at your desk. Same data, no double entry.",
+    icon: "device",
+  },
+  {
+    title: "Built for How You Work",
+    description: "Designed around construction workflows, not adapted from generic accounting software.",
+    icon: "wrench",
+  },
+];
+---
+<section class="bg-off-white py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
+      {valueProps.map((prop) => (
+        <div class="rounded-lg border border-concrete-gray/20 bg-white p-6 text-center shadow-sm" data-animate>
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-molten-orange/10">
+            {prop.icon === "dollar" && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-molten-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            )}
+            {prop.icon === "chart" && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-molten-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="12" width="4" height="9" rx="1" />
+                <rect x="10" y="7" width="4" height="14" rx="1" />
+                <rect x="17" y="3" width="4" height="18" rx="1" />
+              </svg>
+            )}
+            {prop.icon === "device" && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-molten-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="13" height="14" rx="2" />
+                <rect x="17" y="6" width="5" height="16" rx="1" />
+                <line x1="17" y1="19" x2="22" y2="19" />
+                <line x1="2" y1="14" x2="15" y2="14" />
+              </svg>
+            )}
+            {prop.icon === "wrench" && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-molten-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+            )}
+          </div>
+          <h3 class="text-lg font-bold text-gunmetal">{prop.title}</h3>
+          <p class="mt-2 text-sm text-concrete-gray">{prop.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
