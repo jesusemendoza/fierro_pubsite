@@ -70,11 +70,14 @@ skipped: 1
 ## Gaps
 
 - truth: "Mobile menu X close button closes the overlay"
-  status: failed
+  status: fixed
   reason: "User reported: When I try to tap the x it does not close the links work though"
   severity: major
   test: 8
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "MobileMenu z-index (z-40) was lower than Nav (z-50), so nav bar covered the close button and intercepted clicks"
+  artifacts:
+    - path: "src/components/MobileMenu.astro"
+      issue: "z-40 lower than nav z-50"
+  missing:
+    - "Changed to z-[60] so mobile menu renders above nav"
   debug_session: ""
