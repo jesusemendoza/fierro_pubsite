@@ -1,11 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PainSection from '../components/why-fierro/PainSection.astro';
+import AiSection from '../components/why-fierro/AiSection.astro';
+import ClosingCta from '../components/landing/ClosingCta.astro';
+
+const painPoints = [
+  {
+    problem: "Your PM approved a change order but nobody in the field logged the expense",
+    cause: "Field crews and office teams work in different worlds. Change orders get approved over the phone, expenses get scribbled on receipts, and by the time it all reaches the office, the budget is already wrong.",
+    solution: "Fierro gives everyone -- field and office -- one place to log costs the moment they happen. No end-of-day data entry. No lost receipts. Real numbers, in real time.",
+  },
+  {
+    problem: "You thought the job was profitable until you ran the numbers",
+    cause: "When you only see the full picture at month-end, overruns have already happened. You're not managing costs -- you're discovering them after the fact.",
+    solution: "Fierro shows you budget health as it changes, not after it's too late. Catch overruns days earlier. Eliminate the end-of-month spreadsheet panic.",
+  },
+  {
+    problem: "Your investors are asking for updates and you're scrambling to pull numbers from three places",
+    cause: "Stakeholders want to know project health, and you shouldn't need an hour to answer them. But when your data lives in email threads, shared drives, and someone's personal spreadsheet, that's exactly what it takes.",
+    solution: "Give stakeholders a real-time window into project health. Fierro's analytics show budget, spend, and progress in one view -- always current, always accurate.",
+  },
+  {
+    problem: "Your tools don't talk to each other -- and they definitely don't talk to AI",
+    cause: "The construction industry adopted software in layers. Accounting here, project management there, estimating somewhere else. None of it connects, and none of it is ready for AI-powered workflows.",
+    solution: "Fierro is built for interoperability. Our MCP server lets AI assistants read your project data directly. Your tools don't just connect -- they think.",
+  },
+];
 ---
+
 <BaseLayout title="Why Fierro">
-  <section class="flex min-h-[60vh] items-center justify-center pt-20">
-    <div class="text-center">
-      <h1 class="text-3xl font-bold text-gunmetal">Why Fierro</h1>
-      <p class="mt-4 text-lg text-concrete-gray">Coming soon</p>
+  <noscript>
+    <style>
+      [data-animate] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <!-- Hero / Header (dark bg for Nav compatibility) -->
+  <section class="bg-gunmetal pt-28 pb-16 lg:pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <div data-animate>
+        <h1 class="text-4xl font-bold text-off-white lg:text-5xl">
+          Why Fierro?
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-off-white/70 leading-relaxed">
+          Construction runs on trust. But when costs are scattered across
+          spreadsheets, texts, and shoeboxes, trust breaks down. We built
+          Fierro to fix that.
+        </p>
+      </div>
     </div>
   </section>
+
+  <!-- Pain-first narrative sections -->
+  <section class="bg-off-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24" data-animate-stagger>
+      {painPoints.map((point, i) => (
+        <PainSection
+          problem={point.problem}
+          cause={point.cause}
+          solution={point.solution}
+          index={i}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- AI integration section -->
+  <AiSection />
+
+  <!-- Closing CTA -->
+  <ClosingCta />
 </BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const targets = document.querySelectorAll('[data-animate]');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  });
+</script>
