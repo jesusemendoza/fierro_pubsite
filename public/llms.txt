@@ -1,15 +1,15 @@
 # Fierro
 
-> Fierro is construction job cost control software that helps contractors,
-> project owners, and teams track budgets, expenses, and project health
+> Fierro is renovation cost tracking software that helps homeowners,
+> flippers, and investors track budgets, expenses, and project health
 > in real time. Available as a web app and mobile app with AI/MCP
 > integration for automated workflows.
 
 ## Pages
 
-- [Home](https://getfierro.com/): Overview of Fierro's construction cost control platform
-- [Pricing](https://getfierro.com/pricing): Three tiers -- Free ($0/mo), Plus ($49/mo), Builder (custom)
-- [Why Fierro](https://getfierro.com/why-fierro): Pain-first narrative on why construction teams need Fierro
+- [Home](https://getfierro.com/): Overview of Fierro's renovation cost tracking platform
+- [Pricing](https://getfierro.com/pricing): Three tiers -- Free ($0/mo), Plus ($49/mo), Pro (custom)
+- [Why Fierro](https://getfierro.com/why-fierro): Pain-first narrative on why homeowners and investors need Fierro
 - [Privacy Policy](https://getfierro.com/privacy): How Fierro collects, uses, and protects your data
 - [Terms of Service](https://getfierro.com/terms): Terms governing use of the Fierro platform
 
