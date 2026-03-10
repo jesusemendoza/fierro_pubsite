@@ -7,7 +7,80 @@ import HowItWorks from '../components/landing/HowItWorks.astro';
 import ClosingCta from '../components/landing/ClosingCta.astro';
 ---
 
-<BaseLayout title="Construction Cost Control">
+<BaseLayout
+  title="Construction Cost Control"
+  description="Track construction budgets, expenses, and project health in real time. Free for solo contractors. No spreadsheets, no surprises."
+  ogImage="/og/home.png"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Fierro",
+        "url": "https://getfierro.com",
+        "logo": "https://getfierro.com/favicon.ico",
+        "description": "Construction job cost control software for contractors, project owners, and teams.",
+        "email": "support@getfierro.com",
+        "sameAs": []
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Fierro",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://getfierro.com",
+        "description": "Track construction budgets, expenses, and project health in real time. Built for general contractors, subcontractors, and project owners.",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "0",
+          "highPrice": "49",
+          "priceCurrency": "USD",
+          "offerCount": "3",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "For solo contractors getting started. 1 project, 6 sub-projects, 3 team members."
+            },
+            {
+              "@type": "Offer",
+              "name": "Plus",
+              "price": "49",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "49",
+                "priceCurrency": "USD",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": "1",
+                  "unitCode": "MON"
+                }
+              },
+              "description": "For growing teams managing multiple jobs. 5 projects, 20 sub-projects, 10 team members."
+            },
+            {
+              "@type": "Offer",
+              "name": "Builder",
+              "description": "For enterprises that need everything. Unlimited projects, custom integrations."
+            }
+          ]
+        },
+        "featureList": [
+          "Real-time budget tracking",
+          "Expense management",
+          "Vendor management",
+          "Team collaboration",
+          "Analytics dashboard",
+          "AI/MCP integration",
+          "API access"
+        ]
+      }
+    ]
+  })} />
   <noscript>
     <style>
       [data-animate] { opacity: 1 !important; transform: none !important; }
