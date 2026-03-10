@@ -63,7 +63,7 @@
 - [x] **PERF-05**: Open Graph tags and social sharing image per page
 - [x] **PERF-06**: Structured data (Organization + SoftwareApplication schema)
 - [x] **PERF-07**: Sitemap generated at build time
-- [ ] **PERF-08**: Responsive design — mobile-first, works across all screen sizes, WCAG AA contrast ratios
+- [x] **PERF-08**: Responsive design — mobile-first, works across all screen sizes, WCAG AA contrast ratios
 
 ### Documentation
 
@@ -149,7 +149,7 @@
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
-| PERF-08 | Phase 5 | Pending |
+| PERF-08 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 42 total
