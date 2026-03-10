@@ -17,6 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: Pricing and Why Fierro** - Transparent pricing page with toggle and the persuasion-driven "Why Fierro" narrative page
 - [ ] **Phase 4: Legal, SEO, and Documentation** - Privacy/Terms pages, comprehensive SEO pass, and deployment/migration docs
 - [ ] **Phase 5: Performance Audit and Launch Polish** - Lighthouse 95+ validation, 3G performance verification, JS audit, and responsive/accessibility confirmation
+- [ ] **Phase 6: Phase 1 Traceability Closure** - Create missing Phase 1 documentation artifacts (01-02-SUMMARY.md, VERIFICATION.md) and update REQUIREMENTS.md for NAV-01–04
 
 ## Phase Details
 
@@ -102,6 +103,21 @@ Plans:
 - [ ] 05-01-PLAN.md -- Accessibility fixes (skip-to-content, focus trap, landmark labels, decorative SVGs) and cache headers
 - [ ] 05-02-PLAN.md -- Lighthouse CI setup, accessibility and responsive Playwright tests, and full validation
 
+### Phase 6: Phase 1 Traceability Closure
+**Goal**: Close all Phase 1 audit gaps by creating missing documentation artifacts and updating requirement statuses — no code changes needed, all features are implemented
+**Depends on**: Phase 5
+**Requirements**: NAV-01, NAV-02, NAV-03, NAV-04 (status fix), FNDN-01, FNDN-02, FNDN-03, FNDN-04, FNDN-05 (verification)
+**Gap Closure:** Closes 9 requirement gaps from v1.0 audit
+**Success Criteria** (what must be TRUE):
+  1. 01-02-SUMMARY.md exists documenting Nav, MobileMenu, and Footer component execution
+  2. Phase 1 VERIFICATION.md exists with retroactive verification of all 9 Phase 1 requirements
+  3. REQUIREMENTS.md shows NAV-01 through NAV-04 as Complete with [x] checkboxes
+  4. Re-audit of Phase 1 shows 0 unsatisfied, 0 partial requirements
+**Plans**: TBD
+
+Plans:
+- [ ] 06-01-PLAN.md -- Create 01-02-SUMMARY.md, Phase 1 VERIFICATION.md, and update REQUIREMENTS.md
+
 ## Progress
 
 **Execution Order:**
@@ -114,3 +130,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 3. Pricing and Why Fierro | 0/2 | Planning complete | - |
 | 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
 | 5. Performance Audit and Launch Polish | 0/2 | Planning complete | - |
+| 6. Phase 1 Traceability Closure | 0/1 | Planning complete | - |
