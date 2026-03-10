@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+  <!-- Dashboard frame -->
+  <rect x="40" y="20" width="400" height="280" rx="16" fill="#F5F4F0" opacity="0.1"/>
+  <rect x="40" y="20" width="400" height="280" rx="16" stroke="#F5F4F0" stroke-width="1" opacity="0.2"/>
+
+  <!-- Top bar -->
+  <rect x="56" y="36" width="368" height="32" rx="6" fill="#F5F4F0" opacity="0.06"/>
+  <circle cx="76" cy="52" r="6" fill="#E8600A" opacity="0.8"/>
+  <rect x="92" y="47" width="60" height="10" rx="3" fill="#F5F4F0" opacity="0.15"/>
+  <rect x="164" y="47" width="40" height="10" rx="3" fill="#F5F4F0" opacity="0.1"/>
+
+  <!-- Left metric cards row -->
+  <rect x="56" y="84" width="110" height="64" rx="8" fill="#F5F4F0" opacity="0.08"/>
+  <rect x="68" y="96" width="40" height="8" rx="2" fill="#8B8D92" opacity="0.4"/>
+  <rect x="68" y="112" width="70" height="14" rx="3" fill="#E8600A" opacity="0.7"/>
+  <rect x="68" y="132" width="50" height="6" rx="2" fill="#2D8B55" opacity="0.5"/>
+
+  <rect x="178" y="84" width="110" height="64" rx="8" fill="#F5F4F0" opacity="0.08"/>
+  <rect x="190" y="96" width="40" height="8" rx="2" fill="#8B8D92" opacity="0.4"/>
+  <rect x="190" y="112" width="60" height="14" rx="3" fill="#F5F4F0" opacity="0.2"/>
+  <rect x="190" y="132" width="50" height="6" rx="2" fill="#E8600A" opacity="0.4"/>
+
+  <rect x="300" y="84" width="110" height="64" rx="8" fill="#F5F4F0" opacity="0.08"/>
+  <rect x="312" y="96" width="40" height="8" rx="2" fill="#8B8D92" opacity="0.4"/>
+  <rect x="312" y="112" width="55" height="14" rx="3" fill="#F5F4F0" opacity="0.2"/>
+  <rect x="312" y="132" width="50" height="6" rx="2" fill="#2D8B55" opacity="0.5"/>
+
+  <!-- Bar chart area -->
+  <rect x="56" y="164" width="220" height="120" rx="8" fill="#F5F4F0" opacity="0.06"/>
+  <rect x="72" y="244" width="24" height="28" rx="3" fill="#E8600A" opacity="0.6"/>
+  <rect x="104" y="224" width="24" height="48" rx="3" fill="#E8600A" opacity="0.7"/>
+  <rect x="136" y="208" width="24" height="64" rx="3" fill="#E8600A" opacity="0.8"/>
+  <rect x="168" y="232" width="24" height="40" rx="3" fill="#E8600A" opacity="0.65"/>
+  <rect x="200" y="216" width="24" height="56" rx="3" fill="#E8600A" opacity="0.75"/>
+  <rect x="232" y="200" width="24" height="72" rx="3" fill="#E8600A" opacity="0.85"/>
+  <!-- Chart label -->
+  <rect x="72" y="176" width="60" height="8" rx="2" fill="#8B8D92" opacity="0.3"/>
+
+  <!-- Right side panel -- donut chart hint -->
+  <rect x="292" y="164" width="120" height="120" rx="8" fill="#F5F4F0" opacity="0.06"/>
+  <circle cx="352" cy="224" r="36" stroke="#E8600A" stroke-width="8" opacity="0.6" stroke-dasharray="140 226"/>
+  <circle cx="352" cy="224" r="36" stroke="#2D8B55" stroke-width="8" opacity="0.5" stroke-dasharray="60 226" stroke-dashoffset="-140"/>
+  <circle cx="352" cy="224" r="36" stroke="#8B8D92" stroke-width="8" opacity="0.3" stroke-dasharray="26 226" stroke-dashoffset="-200"/>
+  <rect x="308" y="176" width="50" height="8" rx="2" fill="#8B8D92" opacity="0.3"/>
+
+  <!-- Floating accent elements -->
+  <circle cx="430" cy="40" r="4" fill="#E8600A" opacity="0.4"/>
+  <circle cx="50" cy="300" r="3" fill="#2D8B55" opacity="0.3"/>
+</svg>
