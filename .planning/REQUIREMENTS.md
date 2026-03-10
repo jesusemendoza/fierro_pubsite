@@ -15,10 +15,10 @@
 
 ### Navigation & Chrome
 
-- [ ] **NAV-01**: Sticky top navigation with Logo | Features | Pricing | Why Fierro | Login | **Start Free** CTA button
-- [ ] **NAV-02**: Mobile hamburger menu that collapses nav on small screens with 44px+ touch targets
-- [ ] **NAV-03**: Footer with columns: Product (Features, Pricing), Company (Why Fierro), Legal (Privacy, Terms), and social links
-- [ ] **NAV-04**: "Login" nav link points to app.getfierro.com/login
+- [x] **NAV-01**: Sticky top navigation with Logo | Features | Pricing | Why Fierro | Login | **Start Free** CTA button
+- [x] **NAV-02**: Mobile hamburger menu that collapses nav on small screens with 44px+ touch targets
+- [x] **NAV-03**: Footer with columns: Product (Features, Pricing), Company (Why Fierro), Legal (Privacy, Terms), and social links
+- [x] **NAV-04**: "Login" nav link points to app.getfierro.com/login
 
 ### Landing Page
 
@@ -117,10 +117,10 @@
 | FNDN-03 | Phase 1 | Complete |
 | FNDN-04 | Phase 1 | Complete |
 | FNDN-05 | Phase 1 | Complete |
-| NAV-01 | Phase 6 | Pending |
-| NAV-02 | Phase 6 | Pending |
-| NAV-03 | Phase 6 | Pending |
-| NAV-04 | Phase 6 | Pending |
+| NAV-01 | Phase 1 | Complete |
+| NAV-02 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete |
+| NAV-04 | Phase 1 | Complete |
 | LAND-01 | Phase 2 | Complete |
 | LAND-02 | Phase 2 | Complete |
 | LAND-03 | Phase 2 | Complete |
@@ -163,4 +163,4 @@
 
 ---
 *Requirements defined: 2026-03-09*
-*Last updated: 2026-03-09 after roadmap creation*
+*Last updated: 2026-03-10 after Phase 6 traceability closure*
