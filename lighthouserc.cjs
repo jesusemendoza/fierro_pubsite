@@ -16,6 +16,8 @@ module.exports = {
         'categories:performance': ['error', { minScore: 0.95 }],
         'categories:accessibility': ['error', { minScore: 0.95 }],
         'categories:best-practices': ['error', { minScore: 0.95 }],
+        'first-contentful-paint': ['error', { maxNumericValue: 1200 }],
+        'interactive': ['error', { maxNumericValue: 1500 }],
       },
     },
     upload: {
