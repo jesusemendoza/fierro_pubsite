@@ -96,10 +96,11 @@ Plans:
   2. Time to First Render is under 1 second and Time to Interactive is under 1.5 seconds on simulated 3G (WebPageTest or Lighthouse throttling)
   3. The site ships zero or near-zero client-side JavaScript -- only Astro islands for pricing toggle and mobile nav (if JS is required for those)
   4. Every page renders correctly and is fully usable on mobile, tablet, and desktop viewports with WCAG AA contrast ratios verified
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md -- Accessibility fixes (skip-to-content, focus trap, landmark labels, decorative SVGs) and cache headers
+- [ ] 05-02-PLAN.md -- Lighthouse CI setup, accessibility and responsive Playwright tests, and full validation
 
 ## Progress
 
@@ -112,4 +113,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Landing Page | 0/3 | Planning complete | - |
 | 3. Pricing and Why Fierro | 0/2 | Planning complete | - |
 | 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
-| 5. Performance Audit and Launch Polish | 0/0 | Not started | - |
+| 5. Performance Audit and Launch Polish | 0/2 | Planning complete | - |
