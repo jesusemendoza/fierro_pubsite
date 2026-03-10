@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import logoSrc from '../assets/logo.svg';
+---
+
+<BaseLayout title="Page Not Found" description="This page doesn't exist.">
+  <section class="bg-gunmetal pt-28 pb-16 lg:pb-24 min-h-[80vh] flex items-center">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex flex-col items-center gap-6">
+        <div
+          class="h-20 w-20 text-molten-orange"
+          aria-hidden="true"
+          style={`-webkit-mask: url(${logoSrc.src}) no-repeat center / contain; mask: url(${logoSrc.src}) no-repeat center / contain; background-color: currentColor;`}
+        ></div>
+        <span class="text-2xl font-bold uppercase tracking-widest text-off-white">
+          Fierro
+        </span>
+      </div>
+
+      <p class="mt-10 text-6xl font-bold text-off-white lg:text-8xl">404</p>
+      <h1 class="mt-4 text-2xl font-bold text-off-white lg:text-3xl">
+        Wrong jobsite, boss.
+      </h1>
+      <p class="mx-auto mt-4 max-w-md text-lg text-off-white/70 leading-relaxed">
+        Whatever you were looking for isn't here. Maybe the page got demolished, maybe the address was wrong. Either way, let's get you back on track.
+      </p>
+
+      <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a
+          href="/"
+          class="rounded-md bg-molten-orange px-8 py-3 font-semibold text-white transition-colors hover:bg-molten-orange/90"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/pricing"
+          class="rounded-md border border-off-white/20 px-8 py-3 font-semibold text-off-white transition-colors hover:border-molten-orange hover:text-molten-orange"
+        >
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
