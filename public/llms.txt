@@ -1,0 +1,21 @@
+# Fierro
+
+> Fierro is construction job cost control software that helps contractors,
+> project owners, and teams track budgets, expenses, and project health
+> in real time. Available as a web app and mobile app with AI/MCP
+> integration for automated workflows.
+
+## Pages
+
+- [Home](https://getfierro.com/): Overview of Fierro's construction cost control platform
+- [Pricing](https://getfierro.com/pricing): Three tiers -- Free ($0/mo), Plus ($49/mo), Builder (custom)
+- [Why Fierro](https://getfierro.com/why-fierro): Pain-first narrative on why construction teams need Fierro
+- [Privacy Policy](https://getfierro.com/privacy): How Fierro collects, uses, and protects your data
+- [Terms of Service](https://getfierro.com/terms): Terms governing use of the Fierro platform
+
+## AI Integration
+
+- Fierro provides an MCP (Model Context Protocol) server for AI assistant integration
+- AI agents can read and modify project data (budgets, expenses, vendors) via the MCP server
+- MCP access is available on Plus and Builder plans
+- App access: https://app.getfierro.com

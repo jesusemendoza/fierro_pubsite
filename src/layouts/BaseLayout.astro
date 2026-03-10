@@ -7,17 +7,49 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalURL?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Fierro is construction job cost control software. Track budgets, expenses, and project health in real time.',
+  ogImage = '/og/home.png',
+  ogType = 'website',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = Astro.props;
+
+const fullTitle = `${title} | Fierro`;
+const ogImageURL = new URL(ogImage, Astro.site).href;
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
-    <title>{title} | Fierro</title>
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Fierro" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
     <ClientRouter />
+    <slot name="head" />
   </head>
   <body class="bg-off-white text-gunmetal font-sans antialiased">
     <Nav />
