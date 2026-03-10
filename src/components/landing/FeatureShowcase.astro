@@ -1,85 +1,81 @@
 ---
 import FeatureRow from './FeatureRow.astro';
-import FeatureBudget from '../../assets/illustrations/feature-budget.svg';
-import FeatureExpenses from '../../assets/illustrations/feature-expenses.svg';
-import FeatureTeam from '../../assets/illustrations/feature-team.svg';
-import FeatureVendor from '../../assets/illustrations/feature-vendor.svg';
-import FeatureAnalytics from '../../assets/illustrations/feature-analytics.svg';
+import { screenshotUrl } from '../../utils/screenshot';
 ---
 
 <section id="features" class="bg-off-white py-16 lg:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <h2 class="mb-16 text-center text-3xl font-bold text-gunmetal">
-      Everything you need to control construction costs
+      Everything you need to stay on budget
     </h2>
 
     <div class="space-y-16 lg:space-y-24">
-      <!-- Row 1: Budget Tracking (normal, desktop mockup) -->
+      <!-- Row 1: Budget Tracking -->
       <FeatureRow
         title="Budget Tracking"
-        description="Set your numbers up front and watch every dollar against the plan. No more end-of-month surprises."
+        description="Set your renovation budget and watch every dollar against the plan. No more end-of-project surprises."
         bullets={[
-          "Create line-item budgets for every phase of the job",
-          "Track committed vs. actual costs in real time",
-          "Get alerts before you hit budget thresholds"
+          "Create a budget in minutes — just list your categories and targets",
+          "See how much you've spent vs. what's left in real time",
+          "Get alerts before you go over in any category"
         ]}
-      >
-        <FeatureBudget class="w-full h-auto max-w-md mx-auto" />
-      </FeatureRow>
+        imageUrl={screenshotUrl('desktop/homeowner-dashboard.webp')}
+        alt="Real-time budget tracking with spent vs. remaining amounts"
+      />
 
-      <!-- Row 2: Expense Management (reverse, phone mockup) -->
+      <!-- Row 2: Expense Management -->
       <FeatureRow
         title="Expense Management"
-        description="Capture costs from the field or the trailer. Receipts, invoices, change orders -- one place, zero paperwork."
+        description="Every receipt, every invoice, every payment — in one place. Stop losing track of what you've paid."
         bullets={[
-          "Snap receipts on your phone and categorize instantly",
-          "Attach invoices directly to budget line items",
-          "Flag and approve expenses before they post"
+          "Snap receipts on your phone at the store or job site",
+          "Attach contractor invoices to the right budget category",
+          "Review and approve expenses before they pile up"
         ]}
         reverse={true}
-      >
-        <FeatureExpenses class="w-full h-auto max-w-md mx-auto" />
-      </FeatureRow>
+        imageUrl={screenshotUrl('desktop/homeowner-expenses.webp')}
+        alt="Expense timeline with status badges and vendor details"
+      />
 
-      <!-- Row 3: Team Management (normal, desktop mockup) -->
+      <!-- Row 3: Team Management -->
       <FeatureRow
         title="Team Management"
-        description="Keep your crew and subs organized. Everyone sees what they need, nothing they don't."
+        description="Share access with your contractor, designer, or spouse. Everyone sees what they need."
         bullets={[
-          "Invite team members with role-based permissions",
-          "Assign people to specific projects and budgets",
-          "See who logged what, when, from anywhere"
+          "Invite people with different permission levels",
+          "Your contractor logs expenses, you approve them",
+          "See who spent what, when, from anywhere"
         ]}
-      >
-        <FeatureTeam class="w-full h-auto max-w-md mx-auto" />
-      </FeatureRow>
+        imageUrl={screenshotUrl('desktop/homeowner-team.webp')}
+        alt="Project team view showing owner, contractor, and trade roles"
+      />
 
-      <!-- Row 4: Vendor Management (reverse, phone mockup) -->
+      <!-- Row 4: Vendor Management -->
       <FeatureRow
         title="Vendor Management"
-        description="Track every supplier, sub, and service provider across all your jobs. One directory, zero spreadsheets."
+        description="Keep every contractor, supplier, and service provider organized in one place."
         bullets={[
-          "Maintain a central vendor directory across projects",
-          "Link vendor invoices to specific budget categories",
-          "Compare vendor costs across jobs to negotiate smarter"
+          "Build a directory of everyone working on your project",
+          "Link invoices to specific vendors and budget categories",
+          "Compare costs across projects to spot who's overcharging"
         ]}
         reverse={true}
-      >
-        <FeatureVendor class="w-full h-auto max-w-md mx-auto" />
-      </FeatureRow>
+        imageUrl={screenshotUrl('desktop/homeowner-expense-detail.webp')}
+        alt="Expense detail with vendor, category, and approval information"
+      />
 
-      <!-- Row 5: Analytics & Reporting (normal, desktop mockup) -->
+      <!-- Row 5: Analytics & Reporting -->
       <FeatureRow
-        title="Analytics & Reporting"
-        description="See the full picture before it becomes a problem. Real numbers, real time, real decisions."
+        title="Analytics &amp; Reporting"
+        description="See the big picture before small problems become big ones."
         bullets={[
-          "Dashboard views of cost performance across all projects",
-          "Export reports for owners, lenders, and partners",
-          "Spot trends and overruns before they eat your margin"
+          "Visual dashboard showing your budget health at a glance",
+          "Export reports for your partner, lender, or accountant",
+          "Spot trends — is your electrical always running over?"
         ]}
-      >
-        <FeatureAnalytics class="w-full h-auto max-w-md mx-auto" />
-      </FeatureRow>
+        imageUrl={screenshotUrl('desktop/homeowner-audit.webp')}
+        alt="Project audit log with expense activity timeline"
+      />
     </div>
   </div>
 </section>

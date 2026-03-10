@@ -11,10 +11,13 @@ Full copy plan: `docs/plans/REWRITE-PLAN.md`
 
 ---
 
-## Phase 0: Image Pipeline + Supabase Upload
+## Phase 0: Image Pipeline + Supabase Upload ✅
 
 ### Goal
 Compress all 18 raw PNG screenshots to WebP and upload to Supabase public bucket. Create a helper for consistent URL generation.
+
+### Agent Strategy
+Sequential — tasks depend on each other (optimize → upload → helper).
 
 ### Source Assets
 
@@ -88,6 +91,13 @@ Note: Mobile screenshots are in **dark mode**. Desktop screenshots are in **ligh
 ### Goal
 Replace all SVG illustrations with real screenshots. Rewrite all copy for homeowner/flipper audience. Add new AudienceSection.
 
+### Agent Strategy
+**4 agents in parallel** — files don't overlap:
+1. **Hero agent** → `Hero.astro` (copy + screenshot swap)
+2. **Copy agent** → `ValueProps.astro` + `HowItWorks.astro` + `ClosingCta.astro` (copy-only rewrites)
+3. **Features agent** → `FeatureRow.astro` + `FeatureShowcase.astro` (image prop refactor + copy rewrite, coupled)
+4. **Audience agent** → `AudienceSection.astro` (create) + `index.astro` (import + metadata)
+
 ### Files to Modify
 
 | File | Action |
@@ -146,6 +156,12 @@ Hero image should use `loading="eager"` (above the fold).
 ### Goal
 Add Home tier ($20/mo), update grid to 4 columns, rewrite copy for homeowner/flipper audience.
 
+### Agent Strategy
+**3 agents in parallel**:
+1. **Pricing data agent** → `pricing.astro` + `TierCard.astro` (add Home tier, update grid, hero text, metadata)
+2. **Comparison agent** → `ComparisonTable.astro` + `PricingToggle.astro` (add Home column, update savings text)
+3. **FAQ agent** → `PricingFaq.astro` (full rewrite, independent)
+
 ### Files to Modify
 
 | File | Action |
@@ -178,6 +194,11 @@ highlighted: true  // Move from Plus to Home
 ### Goal
 Rewrite for homeowner/flipper pain points. Replace AI/MCP jargon with accessible "Smart Insights" section.
 
+### Agent Strategy
+**2 agents in parallel**:
+1. **Pain points agent** → `why-fierro.astro` + `PainSection.astro` (hero rewrite + pain point copy)
+2. **AI section agent** → `AiSection.astro` (full rewrite to "Smart Budget Insights")
+
 ### Files to Modify
 
 | File | Action |
@@ -195,6 +216,9 @@ Rewrite for homeowner/flipper pain points. Replace AI/MCP jargon with accessible
 
 ## Phase 4: Global Updates
 
+### Agent Strategy
+**All 4 files in parallel** — completely independent edits (Footer, BaseLayout, index.astro Schema.org, llms.txt).
+
 ### Files to Modify
 
 | File | Action |
@@ -211,6 +235,15 @@ Rewrite for homeowner/flipper pain points. Replace AI/MCP jargon with accessible
 ---
 
 ## Phase 5: QA + Testing
+
+### Review Notes
+- **AudienceSection mobile image:** The Homeowners & DIYers card uses a portrait mobile screenshot alongside landscape desktop screenshots in the other two cards. Current fix constrains all to same height, but may need a different approach (phone mockup frame, swap to a desktop screenshot, or different layout). Revisit during visual review.
+
+### Agent Strategy
+**3 agents in parallel**:
+1. **Build + Lighthouse agent** → run `astro build`, Lighthouse CI, check for CLS issues
+2. **Playwright agent** → update test assertions for new copy, add Home tier tests, verify comparison table
+3. **Visual review agent** → check all pages at desktop + mobile breakpoints, verify View Transitions
 
 ### Tasks
 1. Visual review — all pages, desktop + mobile breakpoints

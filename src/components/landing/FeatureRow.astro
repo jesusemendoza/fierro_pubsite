@@ -3,10 +3,12 @@ interface Props {
   title: string;
   description: string;
   bullets: string[];
+  imageUrl: string;
+  alt: string;
   reverse?: boolean;
 }
 
-const { title, description, bullets, reverse = false } = Astro.props;
+const { title, description, bullets, imageUrl, alt, reverse = false } = Astro.props;
 ---
 
 <div
@@ -26,6 +28,14 @@ const { title, description, bullets, reverse = false } = Astro.props;
     </ul>
   </div>
   <div class="flex-1">
-    <slot />
+    <img
+      src={imageUrl}
+      alt={alt}
+      width="1440"
+      height="900"
+      loading="lazy"
+      decoding="async"
+      class="rounded-lg shadow-xl"
+    />
   </div>
 </div>

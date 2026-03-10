@@ -1,5 +1,5 @@
 ---
-import HeroDashboard from '../../assets/illustrations/hero-dashboard.svg';
+import { screenshotUrl } from '../../utils/screenshot';
 ---
 <section class="relative bg-gunmetal min-h-[80vh] flex items-center pt-20 pb-16 lg:pb-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -7,10 +7,10 @@ import HeroDashboard from '../../assets/illustrations/hero-dashboard.svg';
       <!-- Text column -->
       <div class="max-w-xl text-center lg:text-left" data-animate>
         <h1 class="text-4xl font-bold tracking-tight text-off-white sm:text-5xl lg:text-6xl">
-          Every dollar. Every pour. Accounted&nbsp;for.
+          Know exactly where your money goes.
         </h1>
         <p class="mt-6 text-lg text-off-white/70">
-          Construction cost control that keeps your projects profitable.
+          Whether you're remodeling your home or flipping your next investment — track every dollar, catch every overrun, and stay on budget.
         </p>
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
           <a href="https://app.getfierro.com/signup"
@@ -25,7 +25,15 @@ import HeroDashboard from '../../assets/illustrations/hero-dashboard.svg';
       </div>
       <!-- Illustration column -->
       <div class="w-full max-w-lg" data-animate>
-        <HeroDashboard class="w-full h-auto" />
+        <img
+          src={screenshotUrl('desktop/homeowner-dashboard.webp')}
+          alt="Fierro project dashboard showing budget overview for a kitchen remodel"
+          width="1440"
+          height="900"
+          loading="eager"
+          decoding="async"
+          class="rounded-lg shadow-xl"
+        />
       </div>
     </div>
   </div>
