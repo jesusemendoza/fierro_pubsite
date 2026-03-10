@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-10T00:27:05.196Z"
-last_activity: 2026-03-09 -- Completed 01-03 (Deployment Config and Playwright Test Suite)
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-10T01:19:51.833Z"
+last_activity: 2026-03-09 -- Completed 02-01 (Animation CSS, Hero Section, Value Props)
 progress:
   total_phases: 5
   completed_phases: 0
-  total_plans: 3
-  completed_plans: 2
+  total_plans: 6
+  completed_plans: 4
   percent: 67
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-09)
 
 **Core value:** The site must load fast and look trustworthy -- performance is the brand's first impression.
-**Current focus:** Phase 1: Foundation and Site Chrome
+**Current focus:** Phase 2: Landing Page
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation and Site Chrome)
-Plan: 3 of 3 in current phase
+Phase: 2 of 5 (Landing Page)
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-03-09 -- Completed 01-03 (Deployment Config and Playwright Test Suite)
+Last activity: 2026-03-09 -- Completed 02-02 (Feature Showcase, How It Works, Closing CTA)
 
 Progress: [███████░░░] 67%
 
@@ -52,6 +52,7 @@ Progress: [███████░░░] 67%
 *Updated after each plan completion*
 | Phase 01 P01 | 3min | 2 tasks | 9 files |
 | Phase 01 P03 | 2min | 2 tasks | 8 files |
+| Phase 02 P01 | 3min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Used ClientRouter from astro:transitions instead of deprecated ViewTransitions for Astro 5
 - [Phase 01]: Pure static Workers deployment (no @astrojs/cloudflare adapter) - site is fully static, no SSR needed
 - [Phase 01]: Playwright with chromium-only project for fast CI; test files organized per requirement group
+- [Phase 02]: CSS transitions (Pattern 5) for scroll reveals instead of @keyframes -- simpler for one-shot animations
+- [Phase 02]: text-off-white/70 for hero subtitle over text-concrete-gray for better contrast on dark backgrounds
+- [Phase 02]: LAND-03 trust bar intentionally omitted per user decision in CONTEXT.md
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T00:27:05.191Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-landing-page/02-CONTEXT.md
+Last session: 2026-03-10T01:19:51.829Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
