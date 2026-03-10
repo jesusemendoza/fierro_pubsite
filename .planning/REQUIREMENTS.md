@@ -34,13 +34,13 @@
 
 ### Pricing
 
-- [ ] **PRIC-01**: Three-tier card layout — Free ($0/mo), Plus ($49/mo or $470/yr), Builder (Custom)
-- [ ] **PRIC-02**: "Most Popular" visual highlight on the Plus tier
-- [ ] **PRIC-03**: Monthly/annual pricing toggle as an Astro island with savings callout ("Save $118/year")
-- [ ] **PRIC-04**: Feature comparison table below tier cards showing what's included in each plan
-- [ ] **PRIC-05**: FAQ section addressing common pricing questions
-- [ ] **PRIC-06**: Competitive messaging: "No sales calls required. No hidden fees. Start free, upgrade when you're ready."
-- [ ] **PRIC-07**: Deep-linked CTAs that pass plan context — "Start Free" → `app.getfierro.com/signup`, "Start Plus" → `app.getfierro.com/signup?plan=plus&billing=monthly`, annual variant passes `&billing=annual`, "Contact Sales" → mailto or Calendly
+- [x] **PRIC-01**: Three-tier card layout — Free ($0/mo), Plus ($49/mo or $470/yr), Builder (Custom)
+- [x] **PRIC-02**: "Most Popular" visual highlight on the Plus tier
+- [x] **PRIC-03**: Monthly/annual pricing toggle as an Astro island with savings callout ("Save $118/year")
+- [x] **PRIC-04**: Feature comparison table below tier cards showing what's included in each plan
+- [x] **PRIC-05**: FAQ section addressing common pricing questions
+- [x] **PRIC-06**: Competitive messaging: "No sales calls required. No hidden fees. Start free, upgrade when you're ready."
+- [x] **PRIC-07**: Deep-linked CTAs that pass plan context — "Start Free" → `app.getfierro.com/signup`, "Start Plus" → `app.getfierro.com/signup?plan=plus&billing=monthly`, annual variant passes `&billing=annual`, "Contact Sales" → mailto or Calendly
 
 ### Why Fierro
 
@@ -126,13 +126,13 @@
 | LAND-07 | Phase 2 | Complete |
 | LAND-08 | Phase 2 | Complete |
 | LAND-09 | Phase 2 | Complete |
-| PRIC-01 | Phase 3 | Pending |
-| PRIC-02 | Phase 3 | Pending |
-| PRIC-03 | Phase 3 | Pending |
-| PRIC-04 | Phase 3 | Pending |
-| PRIC-05 | Phase 3 | Pending |
-| PRIC-06 | Phase 3 | Pending |
-| PRIC-07 | Phase 3 | Pending |
+| PRIC-01 | Phase 3 | Complete |
+| PRIC-02 | Phase 3 | Complete |
+| PRIC-03 | Phase 3 | Complete |
+| PRIC-04 | Phase 3 | Complete |
+| PRIC-05 | Phase 3 | Complete |
+| PRIC-06 | Phase 3 | Complete |
+| PRIC-07 | Phase 3 | Complete |
 | WHY-01 | Phase 3 | Complete |
 | WHY-02 | Phase 3 | Complete |
 | WHY-03 | Phase 3 | Complete |
