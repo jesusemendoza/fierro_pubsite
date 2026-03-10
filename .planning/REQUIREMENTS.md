@@ -67,9 +67,9 @@
 
 ### Documentation
 
-- [ ] **DOCS-01**: `docs/DEPLOYMENT.md` — Cloudflare Workers Static Assets setup, build commands, CI/CD pipeline
-- [ ] **DOCS-02**: `docs/MIGRATION.md` — Full domain migration guide: DNS changes (Cloudflare CNAME for `app` subdomain), Vercel domain update for fierro_web, Supabase auth redirect URL updates, OAuth provider callback URL updates, Stripe webhook URL updates, environment variable changes, verification checklist
-- [ ] **DOCS-03**: Planning doc written to `fierro_web/docs/plans/deep-link-signup-flow.md` describing the query-param-based signup flow (`?plan=<tier>&billing=<cycle>`) so fierro_web can implement reading those params and auto-routing to Stripe Checkout for paid plans
+- [x] **DOCS-01**: `docs/DEPLOYMENT.md` — Cloudflare Workers Static Assets setup, build commands, CI/CD pipeline
+- [x] **DOCS-02**: `docs/MIGRATION.md` — Full domain migration guide: DNS changes (Cloudflare CNAME for `app` subdomain), Vercel domain update for fierro_web, Supabase auth redirect URL updates, OAuth provider callback URL updates, Stripe webhook URL updates, environment variable changes, verification checklist
+- [x] **DOCS-03**: Planning doc written to `fierro_web/docs/plans/deep-link-signup-flow.md` describing the query-param-based signup flow (`?plan=<tier>&billing=<cycle>`) so fierro_web can implement reading those params and auto-routing to Stripe Checkout for paid plans
 
 ## v2 Requirements
 
@@ -143,9 +143,9 @@
 | PERF-05 | Phase 4 | Pending |
 | PERF-06 | Phase 4 | Pending |
 | PERF-07 | Phase 4 | Pending |
-| DOCS-01 | Phase 4 | Pending |
-| DOCS-02 | Phase 4 | Pending |
-| DOCS-03 | Phase 4 | Pending |
+| DOCS-01 | Phase 4 | Complete |
+| DOCS-02 | Phase 4 | Complete |
+| DOCS-03 | Phase 4 | Complete |
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
