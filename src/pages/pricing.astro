@@ -1,11 +1,145 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingToggle from '../components/pricing/PricingToggle.astro';
+import TierCard from '../components/pricing/TierCard.astro';
+import ComparisonTable from '../components/pricing/ComparisonTable.astro';
+import PricingFaq from '../components/pricing/PricingFaq.astro';
+import ClosingCta from '../components/landing/ClosingCta.astro';
+
+const tiers = [
+  {
+    name: 'Free',
+    price: { monthly: '$0', annual: '$0' },
+    period: '/mo',
+    description: 'For solo contractors getting started',
+    cta: { text: 'Start Free', href: 'https://app.getfierro.com/signup' },
+    features: [
+      '1 project',
+      '6 sub-projects',
+      '3 team members',
+      'Basic expense tracking',
+      'Limited AI access',
+    ],
+    highlighted: false,
+    builder: false,
+  },
+  {
+    name: 'Plus',
+    price: { monthly: '$49', annual: '$39' },
+    period: '/mo',
+    description: 'For growing teams managing multiple jobs',
+    cta: { text: 'Start Plus', href: 'https://app.getfierro.com/signup?plan=plus&billing=monthly' },
+    features: [
+      '5 projects',
+      '20 sub-projects',
+      '10 team members',
+      'Advanced analytics',
+      'Vendor management',
+      'Fully configurable AI/MCP',
+      'Priority support',
+    ],
+    highlighted: true,
+    builder: false,
+  },
+  {
+    name: 'Builder',
+    price: { monthly: 'Custom', annual: 'Custom' },
+    period: '',
+    description: 'For enterprises that need everything',
+    cta: { text: 'Contact Sales', href: '#contact-sales' },
+    features: [
+      'Unlimited projects',
+      'Unlimited sub-projects',
+      'Unlimited team members',
+      'Custom integrations',
+      'Fully configurable AI/MCP',
+      'Dedicated account manager',
+      'API access',
+    ],
+    highlighted: false,
+    builder: true,
+  },
+];
 ---
+
 <BaseLayout title="Pricing">
-  <section class="flex min-h-[60vh] items-center justify-center pt-20">
-    <div class="text-center">
-      <h1 class="text-3xl font-bold text-gunmetal">Pricing</h1>
-      <p class="mt-4 text-lg text-concrete-gray">Coming soon</p>
+  <noscript>
+    <style>
+      [data-animate] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <!-- Dark hero/header section -->
+  <section class="bg-gunmetal pt-28 pb-16 lg:pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl font-bold text-off-white sm:text-4xl lg:text-5xl" data-animate>
+        Simple, Transparent Pricing
+      </h1>
+      <p class="mt-4 text-lg text-off-white/70 max-w-2xl mx-auto" data-animate>
+        No sales calls required. No hidden fees. Start free, upgrade when you're ready.
+      </p>
+      <div class="mt-8" data-animate>
+        <PricingToggle />
+      </div>
     </div>
   </section>
+
+  <!-- Tier cards section -->
+  <section class="bg-off-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate-stagger>
+        {tiers.map((tier) => (
+          <TierCard {...tier} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison table section -->
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gunmetal text-center sm:text-3xl mb-12" data-animate>
+        Compare Plans
+      </h2>
+      <div data-animate>
+        <ComparisonTable />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="bg-off-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gunmetal text-center sm:text-3xl mb-12" data-animate>
+        Common Questions
+      </h2>
+      <div data-animate>
+        <PricingFaq />
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <ClosingCta />
 </BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const targets = document.querySelectorAll('[data-animate]');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  });
+</script>
