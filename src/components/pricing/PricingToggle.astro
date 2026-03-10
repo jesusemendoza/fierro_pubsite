@@ -3,7 +3,7 @@
 
 <pricing-toggle data-default="monthly">
   <div class="flex items-center justify-center gap-3">
-    <span data-label="monthly" class="font-semibold text-off-white">Monthly</span>
+    <span data-label="monthly" class="font-semibold text-off-white transition-colors">Monthly</span>
     <button
       type="button"
       role="switch"
@@ -13,9 +13,9 @@
     >
       <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white transition-transform"></span>
     </button>
-    <span data-label="annual" class="text-off-white/50">Annual</span>
+    <span data-label="annual" class="text-off-white/50 transition-colors">Annual</span>
   </div>
-  <p data-savings class="mt-2 hidden text-center text-sm font-medium text-rebar-green">
+  <p data-savings class="mt-2 text-center text-sm font-medium text-rebar-green invisible">
     Save up to $118/year
   </p>
 </pricing-toggle>
@@ -46,13 +46,15 @@
         btn.classList.toggle('bg-concrete-gray/30', !isAnnual);
 
         // Toggle label styles
+        monthlyLabel?.classList.toggle('text-off-white', !isAnnual);
         monthlyLabel?.classList.toggle('text-off-white/50', isAnnual);
         monthlyLabel?.classList.toggle('font-semibold', !isAnnual);
         annualLabel?.classList.toggle('text-off-white/50', !isAnnual);
+        annualLabel?.classList.toggle('text-off-white', isAnnual);
         annualLabel?.classList.toggle('font-semibold', isAnnual);
 
-        // Show/hide savings callout
-        savingsEl?.classList.toggle('hidden', !isAnnual);
+        // Show/hide savings callout (invisible preserves layout)
+        savingsEl?.classList.toggle('invisible', !isAnnual);
 
         // Update all price displays on the page
         document.querySelectorAll('[data-price-monthly]').forEach((el) => {
