@@ -1,0 +1,77 @@
+---
+interface Props {
+  name: string;
+  price: { monthly: string; annual: string };
+  period: string;
+  description: string;
+  cta: { text: string; href: string };
+  features: string[];
+  highlighted: boolean;
+  builder: boolean;
+}
+
+const { name, price, period, description, cta, features, highlighted, builder } = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative flex flex-col rounded-xl border p-6 lg:p-8',
+    highlighted && 'border-molten-orange ring-2 ring-molten-orange bg-white',
+    builder && 'border-molten-orange/30 bg-gunmetal/5',
+    !highlighted && !builder && 'border-concrete-gray/20 bg-white',
+  ]}
+  data-animate
+>
+  {highlighted && (
+    <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-molten-orange px-4 py-1 text-xs font-bold text-white uppercase tracking-wide">
+      Most Popular
+    </span>
+  )}
+
+  <h3 class="text-xl font-bold text-gunmetal">{name}</h3>
+  <p class="mt-1 text-sm text-concrete-gray">{description}</p>
+
+  <div class="mt-4">
+    {builder ? (
+      <p class="text-3xl font-bold text-gunmetal">Custom</p>
+    ) : (
+      <>
+        <p
+          class="text-3xl font-bold text-gunmetal"
+          data-price-monthly={price.monthly}
+          data-price-annual={price.annual}
+        >
+          {price.monthly}
+        </p>
+        <span class="text-sm text-concrete-gray">{period}</span>
+        {highlighted && (
+          <span class="text-xs text-concrete-gray block mt-1 hidden" data-annual-note>
+            billed annually at $470
+          </span>
+        )}
+      </>
+    )}
+  </div>
+
+  <ul class="mt-6 flex-1 space-y-3">
+    {features.map((f) => (
+      <li class="flex items-start gap-2 text-sm text-gunmetal">
+        <span class="mt-0.5 text-rebar-green">&#x2713;</span>
+        <span>{f}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href={cta.href}
+    data-billing-link={!builder ? '' : undefined}
+    class:list={[
+      'mt-8 block rounded-md px-6 py-3 text-center font-semibold transition-colors',
+      highlighted
+        ? 'bg-molten-orange text-white hover:bg-molten-orange/90'
+        : 'border border-gunmetal text-gunmetal hover:bg-gunmetal hover:text-white',
+    ]}
+  >
+    {cta.text}
+  </a>
+</div>

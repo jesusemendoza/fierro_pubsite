@@ -1,0 +1,46 @@
+---
+const faqs = [
+  {
+    question: "We're too small for this kind of tool",
+    answer: "Fierro's Free tier is built for teams of any size. Track a project, manage expenses, and see where your money goes -- all without paying a dime. If spreadsheets work for one job, great. But when you're juggling two or three, you'll feel the difference.",
+  },
+  {
+    question: "We already use spreadsheets for cost tracking",
+    answer: "Spreadsheets don't warn you when a project is bleeding money. They don't auto-categorize expenses or show you real-time budget health. Fierro doesn't replace your spreadsheet -- it replaces the end-of-month panic when the numbers don't add up.",
+  },
+  {
+    question: "Our existing tools already do this",
+    answer: "Fierro works alongside your existing tools for projects that need you to be nimble. It's not about replacing your whole stack -- it's about having a focused cost-control layer that plugs into how you already work, including AI workflows via MCP.",
+  },
+  {
+    question: "What if we outgrow a tier?",
+    answer: "Upgrade anytime. Your data, your projects, your team -- everything comes with you. No exports, no migrations, no downtime. You pick the tier that fits today; we make sure tomorrow's transition is seamless.",
+  },
+  {
+    question: "I don't have time to onboard a new tool",
+    answer: "Fierro works alongside your stack, not replacing it. Most teams are tracking their first project within 15 minutes. No training sessions, no consultants, no month-long rollouts.",
+  },
+];
+---
+
+<div class="space-y-4">
+  {faqs.map((faq) => (
+    <details class="group rounded-lg border border-concrete-gray/20 bg-white">
+      <summary class="cursor-pointer list-none px-6 py-4 font-semibold text-gunmetal flex items-center justify-between">
+        <span>{faq.question}</span>
+        <svg
+          class="h-5 w-5 shrink-0 text-concrete-gray transition-transform group-open:rotate-180"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="px-6 pb-4 text-concrete-gray leading-relaxed">
+        <p>{faq.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>

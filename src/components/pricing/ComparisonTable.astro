@@ -1,0 +1,40 @@
+---
+const features = [
+  { name: 'Projects', free: '1', plus: '5', builder: 'Unlimited' },
+  { name: 'Sub-projects per project', free: '6', plus: '20', builder: 'Unlimited' },
+  { name: 'Team members', free: '3', plus: '10', builder: 'Unlimited' },
+  { name: 'Expense tracking', free: 'Basic', plus: 'Advanced', builder: 'Advanced' },
+  { name: 'Budget analytics', free: 'Summary', plus: 'Detailed reports', builder: 'Custom dashboards' },
+  { name: 'Vendor management', free: '--', plus: 'Included', builder: 'Included' },
+  { name: 'AI/MCP integration', free: 'Limited', plus: 'Fully configurable', builder: 'Fully configurable' },
+  { name: 'API access', free: '--', plus: '--', builder: 'Included' },
+  { name: 'Custom integrations', free: '--', plus: '--', builder: 'Included' },
+  { name: 'Support', free: 'Community', plus: 'Priority', builder: 'Dedicated account manager' },
+];
+---
+
+<div class="overflow-x-auto">
+  <table class="w-full text-sm text-left">
+    <thead>
+      <tr class="border-b-2 border-gunmetal/10">
+        <th class="px-4 py-3 font-semibold text-gunmetal text-base">Feature</th>
+        <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Free</th>
+        <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Plus</th>
+        <th class="px-4 py-3 font-semibold text-gunmetal text-base text-center">Builder</th>
+      </tr>
+    </thead>
+    <tbody>
+      {features.map((feature, i) => (
+        <tr class:list={[
+          'border-b border-concrete-gray/10',
+          i % 2 === 0 && 'bg-gunmetal/5',
+        ]}>
+          <td class="px-4 py-3 font-medium text-gunmetal">{feature.name}</td>
+          <td class="px-4 py-3 text-concrete-gray text-center">{feature.free}</td>
+          <td class="px-4 py-3 text-concrete-gray text-center">{feature.plus}</td>
+          <td class="px-4 py-3 text-concrete-gray text-center">{feature.builder}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
