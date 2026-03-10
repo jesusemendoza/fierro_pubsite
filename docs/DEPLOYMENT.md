@@ -67,35 +67,67 @@ Cloudflare DNS must have the domain proxied (orange cloud). The `custom_domain: 
 
 ## CI/CD Pipeline
 
-**Current state:** Manual `npm run deploy` from local machine.
+Automated via GitHub Actions. Every push to `main` triggers:
 
-**Recommended GitHub Actions workflow:**
+1. `npm ci` -- install locked dependencies
+2. `npm run build` -- Astro static build to `dist/`
+3. `npx playwright test` -- Playwright tests against `npm run preview` (production build)
+4. `wrangler deploy` -- upload `dist/` to Cloudflare Workers
+5. Smoke check -- curl `https://getfierro.com` for HTTP 200
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches: [main]
+Source of truth: `.github/workflows/deploy.yml`
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: deploy
+Deploy only proceeds if build and tests pass. Smoke check retries 5x with 10s intervals.
+
+### CI/CD Setup
+
+First-time setup for a fresh clone or new collaborator.
+
+**1. Create Cloudflare API Token**
+
+1. Go to https://dash.cloudflare.com/profile/api-tokens
+2. Click "Create Token"
+3. Find "Edit Cloudflare Workers" template, click "Use template"
+4. Account Resources: select "Include" > your account name
+5. Zone Resources: select "Include" > "All Zones" (or specific zone for getfierro.com)
+6. Click "Continue to summary" > "Create Token"
+7. Copy the token immediately -- shown only once
+
+**2. Find Cloudflare Account ID**
+
+- Visible in the Cloudflare dashboard URL: `https://dash.cloudflare.com/<account-id>`
+- Also shown in the right sidebar of the Workers & Pages overview
+
+**3. Add GitHub Repository Secrets**
+
+1. Go to GitHub repo > Settings > Secrets and variables > Actions
+2. Click "New repository secret"
+3. Add `CLOUDFLARE_API_TOKEN` with the token value
+4. Add `CLOUDFLARE_ACCOUNT_ID` with the account ID value
+
+### DNS & Custom Domain
+
+Cloudflare DNS must have `getfierro.com` proxied (orange cloud icon). The `wrangler.jsonc` route uses `custom_domain: true` -- Cloudflare handles SSL automatically after the first `wrangler deploy`.
+
+Verify:
+
+```bash
+curl -I https://getfierro.com
+# Should show cf-ray header and valid SSL
 ```
 
-Secrets needed: `CLOUDFLARE_API_TOKEN` (create in Cloudflare Dashboard > My Profile > API Tokens > Create Token > Edit Cloudflare Workers).
+First deploy with a custom domain may take a few minutes for DNS propagation.
+
+### Troubleshooting
+
+| Problem | Cause | Fix |
+|---------|-------|-----|
+| Deploy fails with 403 | API token wrong permissions or expired | Recreate token using "Edit Cloudflare Workers" template |
+| Deploy fails with account routing error | Missing `CLOUDFLARE_ACCOUNT_ID` secret | Add account ID as GitHub secret (Settings > Secrets) |
+| Build fails in CI but works locally | Node version mismatch or missing dependency | Check `node-version: 22` in workflow; use `npm ci` not `npm install` |
+| Tests fail in CI but pass locally | Dev vs preview server difference | CI uses `npm run preview` (production build); check test doesn't assume dev-only behavior |
+| Smoke check fails after deploy | Edge propagation delay (normally < 30s) | Re-run workflow; if persistent, check Cloudflare Workers dashboard for errors |
+| Domain not routing to site | DNS not proxied or custom domain not configured | Verify orange cloud in Cloudflare DNS; run `wrangler deploy` to register route |
 
 ## Gotchas
 
