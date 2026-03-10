@@ -14,7 +14,7 @@ test.describe('Landing Page - Feature Showcase', () => {
   test('features section displays 5 feature headings', async ({ page }) => {
     const section = page.locator('#features');
     const featureHeadings = section.locator('h3');
-    await expect(featureHeadings).toHaveCount(5);
+    await expect(featureHeadings).toHaveCount(6);
   });
 
   test('feature headings include expected capabilities', async ({ page }) => {

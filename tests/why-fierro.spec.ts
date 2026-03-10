@@ -44,7 +44,7 @@ test.describe('Why Fierro - WHY-01: Pain-first narrative structure', () => {
   test('AI integration section is visible with "AI" in heading text', async ({ page }) => {
     const aiSection = page.getByTestId('ai-section');
     await expect(aiSection).toBeVisible();
-    await expect(aiSection.getByRole('heading', { name: 'Smart Budget Insights' })).toBeVisible();
+    await expect(aiSection.getByRole('heading', { name: 'Your AI Tools, Your Data' })).toBeVisible();
   });
 });
 

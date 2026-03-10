@@ -23,18 +23,18 @@ test.describe('Pricing - Comparison Table (PRIC-04)', () => {
     }).first();
     await expect(projectsRow.locator('td').nth(1)).toContainText('1');
     await expect(projectsRow.locator('td').nth(2)).toContainText('2');
-    await expect(projectsRow.locator('td').nth(3)).toContainText('5');
+    await expect(projectsRow.locator('td').nth(3)).toContainText('8');
     await expect(projectsRow.locator('td').nth(4)).toContainText('Unlimited');
   });
 
-  test('AI insights row shows "Limited" for Free and "Fully configurable" for Plus', async ({ page }) => {
-    const aiRow = page.locator('tr', { hasText: 'AI insights' });
-    await expect(aiRow.locator('td').nth(1)).toContainText('Limited');
-    await expect(aiRow.locator('td').nth(3)).toContainText('Fully configurable');
+  test('ChatGPT integration row shows "Read-only" for Free and "Configurable per project" for Plus', async ({ page }) => {
+    const aiRow = page.locator('tr', { hasText: 'ChatGPT integration' });
+    await expect(aiRow.locator('td').nth(1)).toContainText('Read-only');
+    await expect(aiRow.locator('td').nth(3)).toContainText('Configurable per project');
   });
 
   test('table has at least 8 rows of feature data', async ({ page }) => {
     const dataRows = page.locator('tbody tr');
-    await expect(dataRows).toHaveCount(11);
+    await expect(dataRows).toHaveCount(14);
   });
 });
