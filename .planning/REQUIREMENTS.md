@@ -51,8 +51,8 @@
 
 ### Legal
 
-- [ ] **LEGL-01**: Privacy policy page with content from fierro_web, styled consistently with marketing site
-- [ ] **LEGL-02**: Terms of service page with content from fierro_web, styled consistently with marketing site
+- [x] **LEGL-01**: Privacy policy page with content from fierro_web, styled consistently with marketing site
+- [x] **LEGL-02**: Terms of service page with content from fierro_web, styled consistently with marketing site
 
 ### SEO & Performance
 
@@ -62,7 +62,7 @@
 - [ ] **PERF-04**: Unique title and meta description per page
 - [ ] **PERF-05**: Open Graph tags and social sharing image per page
 - [ ] **PERF-06**: Structured data (Organization + SoftwareApplication schema)
-- [ ] **PERF-07**: Sitemap generated at build time
+- [x] **PERF-07**: Sitemap generated at build time
 - [ ] **PERF-08**: Responsive design — mobile-first, works across all screen sizes, WCAG AA contrast ratios
 
 ### Documentation
@@ -137,12 +137,12 @@
 | WHY-02 | Phase 3 | Complete |
 | WHY-03 | Phase 3 | Complete |
 | WHY-04 | Phase 3 | Complete |
-| LEGL-01 | Phase 4 | Pending |
-| LEGL-02 | Phase 4 | Pending |
+| LEGL-01 | Phase 4 | Complete |
+| LEGL-02 | Phase 4 | Complete |
 | PERF-04 | Phase 4 | Pending |
 | PERF-05 | Phase 4 | Pending |
 | PERF-06 | Phase 4 | Pending |
-| PERF-07 | Phase 4 | Pending |
+| PERF-07 | Phase 4 | Complete |
 | DOCS-01 | Phase 4 | Complete |
 | DOCS-02 | Phase 4 | Complete |
 | DOCS-03 | Phase 4 | Complete |
