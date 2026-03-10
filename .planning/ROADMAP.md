@@ -80,11 +80,12 @@ Plans:
   3. Structured data (Organization + SoftwareApplication JSON-LD) is present in page source and validates in Google's Rich Results Test
   4. A sitemap is generated at build time and accessible at /sitemap.xml
   5. docs/DEPLOYMENT.md, docs/MIGRATION.md, and fierro_web/docs/plans/deep-link-signup-flow.md exist with complete deployment, migration, and deep-link flow documentation
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md -- SEO infrastructure (BaseLayout extension, sitemap, robots.txt, llms.txt) and legal pages (privacy + terms content)
+- [ ] 04-02-PLAN.md -- Page-specific SEO content (OG images, meta descriptions, JSON-LD structured data) and Playwright tests
+- [ ] 04-03-PLAN.md -- Documentation (DEPLOYMENT.md, MIGRATION.md, deep-link-signup-flow.md)
 
 ### Phase 5: Performance Audit and Launch Polish
 **Goal**: The complete site meets its Lighthouse 95+ performance target, loads fast on constrained networks, ships near-zero client-side JavaScript, and works flawlessly across devices
@@ -110,5 +111,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation and Site Chrome | 0/3 | Planning complete | - |
 | 2. Landing Page | 0/3 | Planning complete | - |
 | 3. Pricing and Why Fierro | 0/2 | Planning complete | - |
-| 4. Legal, SEO, and Documentation | 0/0 | Not started | - |
+| 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
 | 5. Performance Audit and Launch Polish | 0/0 | Not started | - |
