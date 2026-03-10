@@ -56,9 +56,9 @@
 
 ### SEO & Performance
 
-- [ ] **PERF-01**: Lighthouse Performance score 95+ on mobile
-- [ ] **PERF-02**: Time to First Render < 1s and Time to Interactive < 1.5s on simulated 3G
-- [ ] **PERF-03**: Zero or near-zero client-side JavaScript (only Astro islands for pricing toggle and mobile nav if needed)
+- [x] **PERF-01**: Lighthouse Performance score 95+ on mobile
+- [x] **PERF-02**: Time to First Render < 1s and Time to Interactive < 1.5s on simulated 3G
+- [x] **PERF-03**: Zero or near-zero client-side JavaScript (only Astro islands for pricing toggle and mobile nav if needed)
 - [x] **PERF-04**: Unique title and meta description per page
 - [x] **PERF-05**: Open Graph tags and social sharing image per page
 - [x] **PERF-06**: Structured data (Organization + SoftwareApplication schema)
@@ -146,9 +146,9 @@
 | DOCS-01 | Phase 4 | Complete |
 | DOCS-02 | Phase 4 | Complete |
 | DOCS-03 | Phase 4 | Complete |
-| PERF-01 | Phase 5 | Pending |
-| PERF-02 | Phase 5 | Pending |
-| PERF-03 | Phase 5 | Pending |
+| PERF-01 | Phase 5 | Complete |
+| PERF-02 | Phase 5 | Complete |
+| PERF-03 | Phase 5 | Complete |
 | PERF-08 | Phase 5 | Complete |
 
 **Coverage:**
