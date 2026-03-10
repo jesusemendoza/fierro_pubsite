@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Requirements**: FNDN-01, FNDN-02, FNDN-03, FNDN-04, FNDN-05, NAV-01, NAV-02, NAV-03, NAV-04
 **Success Criteria** (what must be TRUE):
   1. Visiting getfierro.com loads a page styled with Fierro brand colors (Gunmetal, Molten Orange, Off-White) and DM Sans typography
-  2. A sticky top navigation with Logo, Features, Pricing, Why Fierro, Login, and "Start Free" CTA is visible on all screen sizes, collapsing to a hamburger menu on mobile with 44px+ touch targets
+  2. A sticky top navigation with Logo | Features | Pricing | Why Fierro | Login | "Start Free" CTA is visible on all screen sizes, collapsing to a hamburger menu on mobile with 44px+ touch targets
   3. A footer with Product, Company, and Legal link columns renders at the bottom of every page
   4. "Login" link navigates to app.getfierro.com/login and "Start Free" navigates to app.getfierro.com/signup
   5. The site is deployed to Cloudflare Workers Static Assets (not deprecated Pages) and a `git push` triggers a build-and-deploy pipeline
@@ -128,12 +128,15 @@ Plans:
   2. The workflow uses `cloudflare/wrangler-action@v3` with a `CLOUDFLARE_API_TOKEN` secret
   3. A push to main triggers the workflow and the site is deployed to Cloudflare Workers
   4. getfierro.com loads the site successfully
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 07-01-PLAN.md -- GitHub Actions workflow (build, test, deploy, smoke check), Playwright CI config, and DEPLOYMENT.md extension
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -143,4 +146,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
 | 5. Performance Audit and Launch Polish | 0/2 | Planning complete | - |
 | 6. Phase 1 Traceability Closure | 1/1 | Complete | 2026-03-10 |
-| 7. CI/CD Pipeline and Initial Deploy | 0/0 | Not planned | - |
+| 7. CI/CD Pipeline and Initial Deploy | 0/1 | Planning complete | - |
