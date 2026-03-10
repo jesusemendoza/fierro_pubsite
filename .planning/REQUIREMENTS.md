@@ -59,9 +59,9 @@
 - [ ] **PERF-01**: Lighthouse Performance score 95+ on mobile
 - [ ] **PERF-02**: Time to First Render < 1s and Time to Interactive < 1.5s on simulated 3G
 - [ ] **PERF-03**: Zero or near-zero client-side JavaScript (only Astro islands for pricing toggle and mobile nav if needed)
-- [ ] **PERF-04**: Unique title and meta description per page
-- [ ] **PERF-05**: Open Graph tags and social sharing image per page
-- [ ] **PERF-06**: Structured data (Organization + SoftwareApplication schema)
+- [x] **PERF-04**: Unique title and meta description per page
+- [x] **PERF-05**: Open Graph tags and social sharing image per page
+- [x] **PERF-06**: Structured data (Organization + SoftwareApplication schema)
 - [x] **PERF-07**: Sitemap generated at build time
 - [ ] **PERF-08**: Responsive design — mobile-first, works across all screen sizes, WCAG AA contrast ratios
 
@@ -139,9 +139,9 @@
 | WHY-04 | Phase 3 | Complete |
 | LEGL-01 | Phase 4 | Complete |
 | LEGL-02 | Phase 4 | Complete |
-| PERF-04 | Phase 4 | Pending |
-| PERF-05 | Phase 4 | Pending |
-| PERF-06 | Phase 4 | Pending |
+| PERF-04 | Phase 4 | Complete |
+| PERF-05 | Phase 4 | Complete |
+| PERF-06 | Phase 4 | Complete |
 | PERF-07 | Phase 4 | Complete |
 | DOCS-01 | Phase 4 | Complete |
 | DOCS-02 | Phase 4 | Complete |
