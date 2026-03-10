@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 4: Legal, SEO, and Documentation** - Privacy/Terms pages, comprehensive SEO pass, and deployment/migration docs
 - [ ] **Phase 5: Performance Audit and Launch Polish** - Lighthouse 95+ validation, 3G performance verification, JS audit, and responsive/accessibility confirmation
 - [ ] **Phase 6: Phase 1 Traceability Closure** - Create missing Phase 1 documentation artifacts (01-02-SUMMARY.md, VERIFICATION.md) and update REQUIREMENTS.md for NAV-01–04
-- [ ] **Phase 7: CI/CD Pipeline and Initial Deploy** - GitHub Actions workflow for automated Cloudflare Workers deployment on push to main, plus first production deploy
+- [x] **Phase 7: CI/CD Pipeline and Initial Deploy** - GitHub Actions workflow for automated Cloudflare Workers deployment on push to main, plus first production deploy
 
 ## Phase Details
 
@@ -146,4 +146,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 | 4. Legal, SEO, and Documentation | 0/3 | Planning complete | - |
 | 5. Performance Audit and Launch Polish | 0/2 | Planning complete | - |
 | 6. Phase 1 Traceability Closure | 1/1 | Complete | 2026-03-10 |
-| 7. CI/CD Pipeline and Initial Deploy | 0/1 | Planning complete | - |
+| 7. CI/CD Pipeline and Initial Deploy | 1/1 | Complete | 2026-03-10 |

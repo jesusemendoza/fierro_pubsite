@@ -67,7 +67,7 @@
 
 ### CI/CD
 
-- [ ] **CICD-01**: GitHub Actions workflow that builds and deploys to Cloudflare Workers on push to main, using `cloudflare/wrangler-action@v3` with `CLOUDFLARE_API_TOKEN` secret
+- [x] **CICD-01**: GitHub Actions workflow that builds and deploys to Cloudflare Workers on push to main, using `cloudflare/wrangler-action@v3` with `CLOUDFLARE_API_TOKEN` secret
 
 ### Documentation
 
@@ -154,7 +154,7 @@
 | PERF-02 | Phase 5 | Complete |
 | PERF-03 | Phase 5 | Complete |
 | PERF-08 | Phase 5 | Complete |
-| CICD-01 | Phase 7 | Pending |
+| CICD-01 | Phase 7 | Complete |
 
 **Coverage:**
 - v1 requirements: 43 total
@@ -163,4 +163,4 @@
 
 ---
 *Requirements defined: 2026-03-09*
-*Last updated: 2026-03-10 after Phase 6 traceability closure*
+*Last updated: 2026-03-10 after Phase 7 complete — all v1 requirements done*

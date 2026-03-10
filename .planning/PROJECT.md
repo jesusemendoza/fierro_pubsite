@@ -12,23 +12,28 @@ The site must load fast and look trustworthy. If a contractor hits getfierro.com
 
 ### Validated
 
-(None yet — ship to validate)
+<!-- Shipped and confirmed in v1.0 -->
+
+- ✓ Static marketing site built with Astro 5 — v1.0
+- ✓ Deployed on Cloudflare Workers with getfierro.com custom domain — v1.0
+- ✓ Landing page with hero, value props, feature showcase, How It Works, and CTAs — v1.0
+- ✓ Pricing page with three tiers (Free/Plus/Builder), toggle, comparison table, FAQ — v1.0
+- ✓ Why Fierro narrative page with builder voice and quantified ROI — v1.0
+- ✓ Privacy and Terms pages styled consistently — v1.0
+- ✓ Cohesive visual design: Gunmetal, Molten Orange, Off-White, DM Sans — v1.0
+- ✓ Dark premium aesthetic, clean typography, quantified benefits — v1.0
+- ✓ Lighthouse 95+ on Performance, Accessibility, Best Practices — v1.0
+- ✓ Zero/near-zero client-side JavaScript — v1.0
+- ✓ Deployment and migration documentation — v1.0
+- ✓ Responsive mobile-first design, WCAG AA contrast — v1.0
+- ✓ SEO: meta tags, Open Graph, JSON-LD structured data, sitemap — v1.0
+- ✓ GitHub Actions CI/CD pipeline deploying to Cloudflare Workers — v1.0
 
 ### Active
 
-- [ ] Static marketing site built with Astro
-- [ ] Deployed on Cloudflare Pages with getfierro.com custom domain
-- [ ] Landing page with hero, value props, "Why Fierro" section, and CTAs to app.getfierro.com/signup
-- [ ] Features page showcasing Fierro's capabilities (budget tracking, expenses, team management, vendor management, analytics)
-- [ ] Pricing page with three tiers: Free ($0), Plus ($49/mo or $470/yr), Builder (custom/sales)
-- [ ] Privacy and Terms pages (duplicated from fierro_web for public access)
-- [ ] Cohesive visual design with fierro_app and fierro_web — Gunmetal (#2B2D31), Molten Orange (#E8600A), Off-White (#F5F4F0), DM Sans font
-- [ ] Modern construction aesthetic inspired by ingenious.build — dark premium feel, clean typography, quantified benefits, trust signals
-- [ ] High Lighthouse performance scores (target 95+ on Performance, Accessibility, Best Practices)
-- [ ] Zero or near-zero client-side JavaScript (Astro islands only where needed)
-- [ ] Internal deployment and migration documentation in the repo (Cloudflare Pages setup, DNS, Supabase auth URL updates, Stripe webhook updates, OAuth redirect updates)
-- [ ] Responsive design — mobile-first, works across all screen sizes
-- [ ] SEO-optimized with meta tags, Open Graph, structured data
+<!-- Current scope. Building toward these. -->
+
+(Defining for next milestone)
 
 ### Out of Scope
 
@@ -80,4 +85,4 @@ The repo also needs internal documentation covering the full migration process: 
 | No blog for v1 | Focus on core marketing pages, blog adds content maintenance burden | — Pending |
 
 ---
-*Last updated: 2026-03-09 after initialization*
+*Last updated: 2026-03-10 after v1.0 milestone archived*
