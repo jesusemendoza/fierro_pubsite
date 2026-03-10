@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  bullets: string[];
+  reverse?: boolean;
+}
+
+const { title, description, bullets, reverse = false } = Astro.props;
+---
+
+<div
+  class={`flex flex-col gap-8 lg:items-center lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+  data-animate
+>
+  <div class="flex-1">
+    <h3 class="text-2xl font-bold text-gunmetal">{title}</h3>
+    <p class="mt-3 text-lg text-concrete-gray">{description}</p>
+    <ul class="mt-4 space-y-2">
+      {bullets.map((b) => (
+        <li class="flex items-start gap-2 text-concrete-gray">
+          <span class="mt-1 text-molten-orange">&#x2713;</span>
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class="flex-1">
+    <slot />
+  </div>
+</div>

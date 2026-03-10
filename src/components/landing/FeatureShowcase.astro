@@ -1,0 +1,85 @@
+---
+import FeatureRow from './FeatureRow.astro';
+import FeatureBudget from '../../assets/illustrations/feature-budget.svg';
+import FeatureExpenses from '../../assets/illustrations/feature-expenses.svg';
+import FeatureTeam from '../../assets/illustrations/feature-team.svg';
+import FeatureVendor from '../../assets/illustrations/feature-vendor.svg';
+import FeatureAnalytics from '../../assets/illustrations/feature-analytics.svg';
+---
+
+<section id="features" class="bg-off-white py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="mb-16 text-center text-3xl font-bold text-gunmetal">
+      Everything you need to control construction costs
+    </h2>
+
+    <div class="space-y-16 lg:space-y-24">
+      <!-- Row 1: Budget Tracking (normal, desktop mockup) -->
+      <FeatureRow
+        title="Budget Tracking"
+        description="Set your numbers up front and watch every dollar against the plan. No more end-of-month surprises."
+        bullets={[
+          "Create line-item budgets for every phase of the job",
+          "Track committed vs. actual costs in real time",
+          "Get alerts before you hit budget thresholds"
+        ]}
+      >
+        <FeatureBudget class="w-full h-auto max-w-md mx-auto" />
+      </FeatureRow>
+
+      <!-- Row 2: Expense Management (reverse, phone mockup) -->
+      <FeatureRow
+        title="Expense Management"
+        description="Capture costs from the field or the trailer. Receipts, invoices, change orders -- one place, zero paperwork."
+        bullets={[
+          "Snap receipts on your phone and categorize instantly",
+          "Attach invoices directly to budget line items",
+          "Flag and approve expenses before they post"
+        ]}
+        reverse={true}
+      >
+        <FeatureExpenses class="w-full h-auto max-w-md mx-auto" />
+      </FeatureRow>
+
+      <!-- Row 3: Team Management (normal, desktop mockup) -->
+      <FeatureRow
+        title="Team Management"
+        description="Keep your crew and subs organized. Everyone sees what they need, nothing they don't."
+        bullets={[
+          "Invite team members with role-based permissions",
+          "Assign people to specific projects and budgets",
+          "See who logged what, when, from anywhere"
+        ]}
+      >
+        <FeatureTeam class="w-full h-auto max-w-md mx-auto" />
+      </FeatureRow>
+
+      <!-- Row 4: Vendor Management (reverse, phone mockup) -->
+      <FeatureRow
+        title="Vendor Management"
+        description="Track every supplier, sub, and service provider across all your jobs. One directory, zero spreadsheets."
+        bullets={[
+          "Maintain a central vendor directory across projects",
+          "Link vendor invoices to specific budget categories",
+          "Compare vendor costs across jobs to negotiate smarter"
+        ]}
+        reverse={true}
+      >
+        <FeatureVendor class="w-full h-auto max-w-md mx-auto" />
+      </FeatureRow>
+
+      <!-- Row 5: Analytics & Reporting (normal, desktop mockup) -->
+      <FeatureRow
+        title="Analytics & Reporting"
+        description="See the full picture before it becomes a problem. Real numbers, real time, real decisions."
+        bullets={[
+          "Dashboard views of cost performance across all projects",
+          "Export reports for owners, lenders, and partners",
+          "Spot trends and overruns before they eat your margin"
+        ]}
+      >
+        <FeatureAnalytics class="w-full h-auto max-w-md mx-auto" />
+      </FeatureRow>
+    </div>
+  </div>
+</section>

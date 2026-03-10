@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 480" fill="none">
+  <!-- Phone mockup frame -->
+  <rect x="20" y="10" width="240" height="460" rx="28" fill="#3a3836" />
+  <rect x="30" y="50" width="220" height="390" rx="4" fill="#f5f3ef" />
+  <!-- Notch -->
+  <rect x="100" y="16" width="80" height="24" rx="12" fill="#f5f3ef" opacity="0.1" />
+  <!-- Screen header -->
+  <rect x="48" y="68" width="80" height="12" rx="4" fill="#3a3836" opacity="0.2" />
+  <rect x="48" y="86" width="50" height="8" rx="3" fill="#928e8a" opacity="0.3" />
+  <!-- Vendor card 1 -->
+  <rect x="42" y="112" width="196" height="80" rx="8" fill="white" />
+  <circle cx="72" cy="140" r="16" fill="#d4622b" opacity="0.8" />
+  <rect x="96" y="128" width="70" height="8" rx="3" fill="#3a3836" opacity="0.25" />
+  <rect x="96" y="140" width="50" height="6" rx="3" fill="#928e8a" opacity="0.3" />
+  <rect x="96" y="156" width="40" height="14" rx="4" fill="#d4622b" opacity="0.2" />
+  <rect x="140" y="156" width="40" height="14" rx="4" fill="#928e8a" opacity="0.15" />
+  <!-- Vendor card 2 -->
+  <rect x="42" y="204" width="196" height="80" rx="8" fill="white" />
+  <circle cx="72" cy="232" r="16" fill="#3a3836" opacity="0.3" />
+  <rect x="96" y="220" width="60" height="8" rx="3" fill="#3a3836" opacity="0.25" />
+  <rect x="96" y="232" width="45" height="6" rx="3" fill="#928e8a" opacity="0.3" />
+  <rect x="96" y="248" width="40" height="14" rx="4" fill="#d4622b" opacity="0.2" />
+  <rect x="140" y="248" width="40" height="14" rx="4" fill="#928e8a" opacity="0.15" />
+  <!-- Vendor card 3 -->
+  <rect x="42" y="296" width="196" height="80" rx="8" fill="white" />
+  <circle cx="72" cy="324" r="16" fill="#928e8a" opacity="0.4" />
+  <rect x="96" y="312" width="80" height="8" rx="3" fill="#3a3836" opacity="0.25" />
+  <rect x="96" y="324" width="55" height="6" rx="3" fill="#928e8a" opacity="0.3" />
+  <rect x="96" y="340" width="40" height="14" rx="4" fill="#d4622b" opacity="0.2" />
+  <rect x="140" y="340" width="40" height="14" rx="4" fill="#928e8a" opacity="0.15" />
+  <!-- Add vendor button -->
+  <rect x="42" y="392" width="196" height="36" rx="8" fill="#d4622b" opacity="0.9" />
+  <line x1="130" y1="404" x2="150" y2="404" stroke="#f5f3ef" stroke-width="2" />
+  <line x1="140" y1="394" x2="140" y2="414" stroke="#f5f3ef" stroke-width="2" />
+  <!-- Home indicator -->
+  <rect x="100" y="450" width="80" height="4" rx="2" fill="#f5f3ef" opacity="0.2" />
+</svg>
