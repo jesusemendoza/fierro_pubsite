@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "deploy": "astro build && wrangler deploy",
     "test": "playwright test",
-    "test:chromium": "playwright test --project=chromium"
+    "test:chromium": "playwright test --project=chromium",
+    "test:lighthouse": "lhci autorun",
+    "test:all": "npm run build && npm run test:lighthouse && npm run test"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
@@ -19,6 +21,7 @@
     "tailwindcss": "^4.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
     "pngjs": "^7.0.0",
     "typescript": "^5.7",

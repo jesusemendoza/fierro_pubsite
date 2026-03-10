@@ -3,9 +3,9 @@
 
 @theme {
   --color-gunmetal: oklch(0.235 0.006 265);
-  --color-molten-orange: oklch(0.62 0.19 48);
+  --color-molten-orange: oklch(0.59 0.19 48);
   --color-off-white: oklch(0.97 0.005 90);
-  --color-concrete-gray: oklch(0.63 0.006 265);
+  --color-concrete-gray: oklch(0.48 0.006 265);
   --color-rebar-green: oklch(0.53 0.12 160);
   --color-overrun-red: oklch(0.55 0.22 25);
 
@@ -90,6 +90,6 @@ html {
   margin-bottom: 0.5rem;
 }
 .prose-legal a {
-  color: oklch(0.62 0.19 48); /* molten-orange */
+  color: oklch(0.59 0.19 48); /* molten-orange */
   text-decoration: underline;
 }
