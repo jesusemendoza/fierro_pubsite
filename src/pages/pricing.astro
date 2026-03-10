@@ -11,14 +11,15 @@ const tiers = [
     name: 'Free',
     price: { monthly: '$0', annual: '$0' },
     period: '/mo',
-    description: 'For solo contractors getting started',
+    description: 'For your first project',
     cta: { text: 'Start Free', href: 'https://app.getfierro.com/signup' },
     features: [
       '1 project',
       '6 sub-projects',
-      '3 team members',
+      '2 team members',
+      'Receipt capture (100 MB)',
       'Basic expense tracking',
-      'Limited AI access',
+      'ChatGPT integration (read-only)',
     ],
     highlighted: false,
     builder: false,
@@ -33,8 +34,11 @@ const tiers = [
       '2 projects',
       '15 sub-projects per project',
       '5 team members',
+      '5 contractors (free)',
+      'Receipt capture (5 GB)',
+      'Role-based access',
       'Advanced expense tracking',
-      'Receipt photo capture',
+      'ChatGPT integration (read & write)',
       'Budget alerts',
       'Email support',
     ],
@@ -45,15 +49,19 @@ const tiers = [
     name: 'Plus',
     price: { monthly: '$49', annual: '$39' },
     period: '/mo',
-    description: 'For growing teams managing multiple jobs',
+    description: 'For investors & flippers managing multiple properties',
     cta: { text: 'Start Plus', href: 'https://app.getfierro.com/signup?plan=plus&billing=monthly' },
     features: [
-      '5 projects',
-      '20 sub-projects',
+      '8 projects',
+      '20 sub-projects per project',
       '10 team members',
+      'Unlimited contractors (free)',
+      'Receipt capture (25 GB)',
+      'Role-based access',
       'Advanced analytics',
       'Vendor management',
-      'Fully configurable AI/MCP',
+      'ChatGPT integration (configurable per project)',
+      'Audit logs',
       'Priority support',
     ],
     highlighted: false,
@@ -69,8 +77,12 @@ const tiers = [
       'Unlimited projects',
       'Unlimited sub-projects',
       'Unlimited team members',
+      'Unlimited contractors (free)',
+      'Unlimited receipt storage',
+      'Role-based access',
       'Custom integrations',
-      'Fully configurable AI/MCP',
+      'ChatGPT integration (configurable per project)',
+      'Audit logs',
       'Dedicated account manager',
       'API access',
     ],
@@ -98,7 +110,7 @@ const tiers = [
         Plans That Fit Your Project
       </h1>
       <p class="mt-4 text-lg text-off-white/70 max-w-2xl mx-auto" data-animate>
-        Tracking a kitchen remodel? Free. Managing a portfolio of flips? $49/mo. No sales calls, no surprises.
+        Tracking a kitchen remodel? Free. Managing a portfolio of flips? $49/mo for 8 projects. No sales calls, no surprises.
       </p>
       <div class="mt-8" data-animate>
         <PricingToggle />

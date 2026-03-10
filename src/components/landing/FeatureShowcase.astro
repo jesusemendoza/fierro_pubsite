@@ -10,7 +10,7 @@ import { screenshotUrl } from '../../utils/screenshot';
     </h2>
 
     <div class="space-y-16 lg:space-y-24">
-      <!-- Row 1: Budget Tracking -->
+      <!-- Row 1: Budget Tracking (the promise) -->
       <FeatureRow
         title="Budget Tracking"
         description="Set your renovation budget and watch every dollar against the plan. No more end-of-project surprises."
@@ -23,7 +23,57 @@ import { screenshotUrl } from '../../utils/screenshot';
         alt="Real-time budget tracking with spent vs. remaining amounts"
       />
 
-      <!-- Row 2: Expense Management -->
+      <!-- Row 2: AI Integration (the differentiator) -->
+      <FeatureRow
+        title="AI Tool Integration"
+        description="Fierro connects to ChatGPT and your AI-powered workflows — so you can get budget insights, flag problems, and generate reports using your own project data."
+        bullets={[
+          "\"Am I over budget on electrical?\" — get real answers from your real data",
+          "Generate cost summaries for your partner, lender, or accountant in seconds",
+          "With premium tiers, you control what AI can see and do — read-only, read & write, or fully configurable per project"
+        ]}
+        reverse={true}
+      >
+        <div class="rounded-lg shadow-xl bg-gunmetal p-6 sm:p-8">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" class="w-full h-auto" aria-label="ChatGPT asking Fierro about project budget">
+            <!-- Chat window frame -->
+            <rect x="0" y="0" width="520" height="320" rx="12" fill="#1C2127" />
+            <rect x="0" y="0" width="520" height="40" rx="12" fill="#262B31" />
+            <rect x="0" y="28" width="520" height="12" fill="#262B31" />
+            <!-- Window dots -->
+            <circle cx="20" cy="20" r="5" fill="#FF5F56" />
+            <circle cx="38" cy="20" r="5" fill="#FFBD2E" />
+            <circle cx="56" cy="20" r="5" fill="#27C93F" />
+            <!-- Title bar -->
+            <text x="260" y="25" text-anchor="middle" fill="#8B929A" font-family="system-ui, sans-serif" font-size="12" font-weight="500">ChatGPT + Fierro</text>
+
+            <!-- User message bubble -->
+            <rect x="170" y="60" width="320" height="36" rx="12" fill="#E8590C" opacity="0.9" />
+            <text x="186" y="83" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="400">Am I over budget on electrical?</text>
+
+            <!-- AI response bubble -->
+            <rect x="28" y="112" width="380" height="120" rx="12" fill="#2A3038" />
+
+            <!-- AI avatar -->
+            <circle cx="48" cy="132" r="10" fill="#10A37F" />
+            <text x="48" y="137" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">G</text>
+
+            <!-- Response text -->
+            <text x="66" y="136" fill="#8B929A" font-family="system-ui, sans-serif" font-size="11">ChatGPT</text>
+            <text x="48" y="160" fill="#D1D5DB" font-family="system-ui, sans-serif" font-size="12">Your Electrical budget is <tspan fill="#E8590C" font-weight="600">82% spent</tspan> with an</text>
+            <text x="48" y="178" fill="#D1D5DB" font-family="system-ui, sans-serif" font-size="12">estimated 40% of work remaining.</text>
+            <text x="48" y="202" fill="#D1D5DB" font-family="system-ui, sans-serif" font-size="12">At current pace, you'll exceed the $8,000</text>
+            <text x="48" y="220" fill="#D1D5DB" font-family="system-ui, sans-serif" font-size="12">budget by <tspan fill="#E8590C" font-weight="600">~$2,400</tspan>.</text>
+
+            <!-- Fierro data badge -->
+            <rect x="28" y="248" width="464" height="48" rx="8" fill="#1A1F24" stroke="#E8590C" stroke-width="1" opacity="0.6" />
+            <text x="48" y="268" fill="#E8590C" font-family="system-ui, sans-serif" font-size="10" font-weight="600">FIERRO PROJECT DATA</text>
+            <text x="48" y="284" fill="#8B929A" font-family="system-ui, sans-serif" font-size="11">Kitchen Remodel → Electrical: $6,560 / $8,000 · 14 expenses · 3 vendors</text>
+          </svg>
+        </div>
+      </FeatureRow>
+
+      <!-- Row 3: Expense Management (the daily workflow) -->
       <FeatureRow
         title="Expense Management"
         description="Every receipt, every invoice, every payment — in one place. Stop losing track of what you've paid."
@@ -32,12 +82,11 @@ import { screenshotUrl } from '../../utils/screenshot';
           "Attach contractor invoices to the right budget category",
           "Review and approve expenses before they pile up"
         ]}
-        reverse={true}
         imageUrl={screenshotUrl('desktop/homeowner-expenses.webp')}
         alt="Expense timeline with status badges and vendor details"
       />
 
-      <!-- Row 3: Team Management -->
+      <!-- Row 4: Team Management (collaboration) -->
       <FeatureRow
         title="Team Management"
         description="Share access with your contractor, designer, or spouse. Everyone sees what they need."
@@ -46,11 +95,25 @@ import { screenshotUrl } from '../../utils/screenshot';
           "Your contractor logs expenses, you approve them",
           "See who spent what, when, from anywhere"
         ]}
+        reverse={true}
         imageUrl={screenshotUrl('desktop/homeowner-team.webp')}
         alt="Project team view showing owner, contractor, and trade roles"
       />
 
-      <!-- Row 4: Vendor Management -->
+      <!-- Row 5: Analytics & Reporting (the payoff) -->
+      <FeatureRow
+        title="Analytics &amp; Reporting"
+        description="See the big picture before small problems become big ones."
+        bullets={[
+          "Visual dashboard showing your budget health at a glance",
+          "Export reports for your partner, lender, or accountant",
+          "Spot trends — is your electrical always running over?"
+        ]}
+        imageUrl={screenshotUrl('desktop/homeowner-audit.webp')}
+        alt="Project audit log with expense activity timeline"
+      />
+
+      <!-- Row 6: Vendor Management (power feature) -->
       <FeatureRow
         title="Vendor Management"
         description="Keep every contractor, supplier, and service provider organized in one place."
@@ -62,19 +125,6 @@ import { screenshotUrl } from '../../utils/screenshot';
         reverse={true}
         imageUrl={screenshotUrl('desktop/homeowner-expense-detail.webp')}
         alt="Expense detail with vendor, category, and approval information"
-      />
-
-      <!-- Row 5: Analytics & Reporting -->
-      <FeatureRow
-        title="Analytics &amp; Reporting"
-        description="See the big picture before small problems become big ones."
-        bullets={[
-          "Visual dashboard showing your budget health at a glance",
-          "Export reports for your partner, lender, or accountant",
-          "Spot trends — is your electrical always running over?"
-        ]}
-        imageUrl={screenshotUrl('desktop/homeowner-audit.webp')}
-        alt="Project audit log with expense activity timeline"
       />
     </div>
   </div>

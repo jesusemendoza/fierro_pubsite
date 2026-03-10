@@ -3,12 +3,13 @@ interface Props {
   title: string;
   description: string;
   bullets: string[];
-  imageUrl: string;
-  alt: string;
+  imageUrl?: string;
+  alt?: string;
   reverse?: boolean;
 }
 
 const { title, description, bullets, imageUrl, alt, reverse = false } = Astro.props;
+const hasSlot = Astro.slots.has('default');
 ---
 
 <div
@@ -28,14 +29,18 @@ const { title, description, bullets, imageUrl, alt, reverse = false } = Astro.pr
     </ul>
   </div>
   <div class="flex-1">
-    <img
-      src={imageUrl}
-      alt={alt}
-      width="1440"
-      height="900"
-      loading="lazy"
-      decoding="async"
-      class="rounded-lg shadow-xl"
-    />
+    {hasSlot ? (
+      <slot />
+    ) : (
+      <img
+        src={imageUrl}
+        alt={alt}
+        width="1440"
+        height="900"
+        loading="lazy"
+        decoding="async"
+        class="rounded-lg shadow-xl"
+      />
+    )}
   </div>
 </div>
