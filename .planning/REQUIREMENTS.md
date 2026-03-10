@@ -44,10 +44,10 @@
 
 ### Why Fierro
 
-- [ ] **WHY-01**: Dedicated "Why Fierro" page with pain-first narrative structure (the problem → why it happens → how Fierro fixes it → proof)
-- [ ] **WHY-02**: Written in "builder voice" — direct, confident, no jargon, like talking to a superintendent at a job trailer
-- [ ] **WHY-03**: Quantified ROI claims where defensible (e.g. "Catch overruns days earlier", "Eliminate end-of-month spreadsheet panic")
-- [ ] **WHY-04**: Closing CTA driving to signup
+- [x] **WHY-01**: Dedicated "Why Fierro" page with pain-first narrative structure (the problem → why it happens → how Fierro fixes it → proof)
+- [x] **WHY-02**: Written in "builder voice" — direct, confident, no jargon, like talking to a superintendent at a job trailer
+- [x] **WHY-03**: Quantified ROI claims where defensible (e.g. "Catch overruns days earlier", "Eliminate end-of-month spreadsheet panic")
+- [x] **WHY-04**: Closing CTA driving to signup
 
 ### Legal
 
@@ -133,10 +133,10 @@
 | PRIC-05 | Phase 3 | Pending |
 | PRIC-06 | Phase 3 | Pending |
 | PRIC-07 | Phase 3 | Pending |
-| WHY-01 | Phase 3 | Pending |
-| WHY-02 | Phase 3 | Pending |
-| WHY-03 | Phase 3 | Pending |
-| WHY-04 | Phase 3 | Pending |
+| WHY-01 | Phase 3 | Complete |
+| WHY-02 | Phase 3 | Complete |
+| WHY-03 | Phase 3 | Complete |
+| WHY-04 | Phase 3 | Complete |
 | LEGL-01 | Phase 4 | Pending |
 | LEGL-02 | Phase 4 | Pending |
 | PERF-04 | Phase 4 | Pending |
