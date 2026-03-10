@@ -26,10 +26,10 @@
 - [x] **LAND-02**: Primary CTA ("Start Free" → app.getfierro.com/signup) and secondary CTA ("See How It Works" → scrolls to features) above the fold
 - [x] **LAND-03**: Client/partner trust bar below the hero (placeholder section if no customer logos yet, e.g. "Built for builders" with construction iconography)
 - [x] **LAND-04**: 3-4 value proposition cards with quantified benefits (e.g. "See Every Dollar in Real Time", "Track Costs Before They Become Overruns")
-- [ ] **LAND-05**: Feature showcase section with alternating left/right layout — screenshot + copy for each capability (budget tracking, expenses, team management, vendor management, analytics)
-- [ ] **LAND-06**: "How It Works" 3-step walkthrough section (Create budget → Track expenses → Know true costs)
-- [ ] **LAND-07**: Role-based persona callouts section ("For General Contractors" / "For Subcontractors" / "For Project Owners") with tailored one-liners
-- [ ] **LAND-08**: Closing CTA section with "Start Free" button
+- [x] **LAND-05**: Feature showcase section with alternating left/right layout — screenshot + copy for each capability (budget tracking, expenses, team management, vendor management, analytics)
+- [x] **LAND-06**: "How It Works" 3-step walkthrough section (Create budget → Track expenses → Know true costs)
+- [x] **LAND-07**: Role-based persona callouts section ("For General Contractors" / "For Subcontractors" / "For Project Owners") with tailored one-liners
+- [x] **LAND-08**: Closing CTA section with "Start Free" button
 - [x] **LAND-09**: Scroll-triggered CSS animations (fade/slide-in) for section reveals — zero JS, using CSS `animation-timeline: view()` or Astro View Transitions
 
 ### Pricing
@@ -121,10 +121,10 @@
 | LAND-02 | Phase 2 | Complete |
 | LAND-03 | Phase 2 | Complete |
 | LAND-04 | Phase 2 | Complete |
-| LAND-05 | Phase 2 | Pending |
-| LAND-06 | Phase 2 | Pending |
-| LAND-07 | Phase 2 | Pending |
-| LAND-08 | Phase 2 | Pending |
+| LAND-05 | Phase 2 | Complete |
+| LAND-06 | Phase 2 | Complete |
+| LAND-07 | Phase 2 | Complete |
+| LAND-08 | Phase 2 | Complete |
 | LAND-09 | Phase 2 | Complete |
 | PRIC-01 | Phase 3 | Pending |
 | PRIC-02 | Phase 3 | Pending |
