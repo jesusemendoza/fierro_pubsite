@@ -52,9 +52,15 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
     <slot name="head" />
   </head>
   <body class="bg-off-white text-gunmetal font-sans antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-molten-orange focus:px-4 focus:py-2 focus:text-white focus:font-semibold focus:outline-none"
+    >
+      Skip to main content
+    </a>
     <Nav />
     <MobileMenu />
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />
