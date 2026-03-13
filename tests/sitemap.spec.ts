@@ -29,5 +29,6 @@ test.describe('Sitemap and Robots (PERF-07)', () => {
     expect(content).toContain('https://getfierro.com/why-fierro');
     expect(content).toContain('https://getfierro.com/privacy');
     expect(content).toContain('https://getfierro.com/terms');
+    expect(content).toContain('https://getfierro.com/support');
   });
 });

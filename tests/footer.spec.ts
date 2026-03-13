@@ -15,6 +15,7 @@ test.describe('Footer (NAV-03)', () => {
     await expect(footer.locator('a[href="/why-fierro"]')).toBeVisible();
     await expect(footer.locator('a[href="/privacy"]')).toBeVisible();
     await expect(footer.locator('a[href="/terms"]')).toBeVisible();
+    await expect(footer.locator('a[href="/support"]')).toBeVisible();
   });
 
   test('footer has signup CTA linking to app.getfierro.com/signup', async ({ page }) => {
@@ -32,7 +33,7 @@ test.describe('Footer (NAV-03)', () => {
   });
 
   test('footer renders on all pages', async ({ page }) => {
-    const pages = ['/', '/pricing', '/why-fierro', '/privacy', '/terms'];
+    const pages = ['/', '/pricing', '/why-fierro', '/privacy', '/terms', '/support'];
     for (const url of pages) {
       await page.goto(url);
       await expect(page.locator('footer')).toBeVisible();

@@ -6,6 +6,7 @@ const pages = [
   { path: '/why-fierro', name: 'Why Fierro' },
   { path: '/privacy', name: 'Privacy' },
   { path: '/terms', name: 'Terms' },
+  { path: '/support', name: 'Support' },
 ];
 
 test.describe('SEO Meta Tags (PERF-04, PERF-05)', () => {
@@ -75,17 +76,17 @@ test.describe('SEO Meta Tags (PERF-04, PERF-05)', () => {
     });
   }
 
-  test('all 5 pages have different titles', async ({ page }) => {
+  test('all 6 pages have different titles', async ({ page }) => {
     const titles: string[] = [];
     for (const pg of pages) {
       await page.goto(pg.path);
       titles.push(await page.title());
     }
     const uniqueTitles = new Set(titles);
-    expect(uniqueTitles.size).toBe(5);
+    expect(uniqueTitles.size).toBe(6);
   });
 
-  test('all 5 pages have different meta descriptions', async ({ page }) => {
+  test('all 6 pages have different meta descriptions', async ({ page }) => {
     const descriptions: string[] = [];
     for (const pg of pages) {
       await page.goto(pg.path);
@@ -94,6 +95,6 @@ test.describe('SEO Meta Tags (PERF-04, PERF-05)', () => {
       descriptions.push(content || '');
     }
     const uniqueDescs = new Set(descriptions);
-    expect(uniqueDescs.size).toBe(5);
+    expect(uniqueDescs.size).toBe(6);
   });
 });
