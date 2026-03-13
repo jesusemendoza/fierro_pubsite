@@ -11,7 +11,8 @@
     "test": "playwright test",
     "test:chromium": "playwright test --project=chromium",
     "test:lighthouse": "lhci autorun",
-    "test:all": "npm run build && npm run test:lighthouse && npm run test"
+    "test:all": "npm run build && npm run test:lighthouse && npm run test",
+    "screenshots": "npx tsx scripts/capture-screenshots.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",

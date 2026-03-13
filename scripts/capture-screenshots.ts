@@ -1,23 +1,23 @@
 /**
- * Playwright script to capture desktop marketing screenshots for Fierro.
+ * Standalone Playwright script to capture desktop marketing screenshots.
  *
  * Usage:
- *   npx playwright test scripts/capture-screenshots.ts --project=chromium
- *
- * Or run directly:
- *   npx playwright test scripts/capture-screenshots.ts
+ *   npx tsx scripts/capture-screenshots.ts
+ *   npm run screenshots
  */
-import { test, expect, type Page, type BrowserContext } from '@playwright/test';
+import { chromium, type Page } from '@playwright/test';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { mkdirSync } from 'fs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const APP_URL = 'https://app.getfierro.com';
 const OUTPUT_DIR = path.resolve(__dirname, '../docs/assets/screenshots/desktop');
 const PASSWORD = 'DemoFierro2026!';
-
-// Viewport: 1440×900 as specified in SCREENSHOT-HANDOFF.md
 const VIEWPORT = { width: 1440, height: 900 };
 
-// Demo account credentials & route info
 const ACCOUNTS = {
   homeowner: {
     email: 'demo+homeowner@getfierro.com',
@@ -40,224 +40,203 @@ const ACCOUNTS = {
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Log in via the app's /login page and wait for redirect. */
 async function login(page: Page, email: string) {
   await page.goto(`${APP_URL}/login`);
   await page.waitForLoadState('networkidle');
 
-  // Fill email & password
   const emailInput = page.getByLabel(/email/i).or(page.locator('input[type="email"]')).first();
   await emailInput.fill(email);
 
   const passwordInput = page.getByLabel(/password/i).or(page.locator('input[type="password"]')).first();
   await passwordInput.fill(PASSWORD);
 
-  // Submit
   const submitBtn = page.getByRole('button', { name: /sign in|log in|submit/i }).first();
   await submitBtn.click();
 
-  // Wait for navigation away from /login
   await page.waitForURL((url) => !url.pathname.includes('/login'), { timeout: 15_000 });
   await page.waitForLoadState('networkidle');
 }
 
-/** Navigate to a project page and wait for data to load. */
 async function goToProjectPage(page: Page, orgId: number, projectId: number, subpath: string) {
   await page.goto(`${APP_URL}/org/${orgId}/project/${projectId}/${subpath}`);
   await page.waitForLoadState('networkidle');
-  // Give charts/animations a moment to render
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(2500);
 }
 
-/** Navigate to org-level page. */
 async function goToOrgPage(page: Page, orgId: number) {
   await page.goto(`${APP_URL}/org/${orgId}`);
   await page.waitForLoadState('networkidle');
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(2500);
 }
 
-/** Take a screenshot with the exact 1440×900 viewport (no full page). */
 async function screenshotViewport(page: Page, filename: string) {
-  await page.screenshot({
-    path: path.join(OUTPUT_DIR, filename),
-    type: 'png',
-  });
+  await page.screenshot({ path: path.join(OUTPUT_DIR, filename), type: 'png' });
   console.log(`  ✓ ${filename}`);
 }
 
-/** Take a full-page screenshot (for list views). */
 async function screenshotFullPage(page: Page, filename: string) {
-  await page.screenshot({
-    path: path.join(OUTPUT_DIR, filename),
-    fullPage: true,
-    type: 'png',
-  });
+  await page.screenshot({ path: path.join(OUTPUT_DIR, filename), fullPage: true, type: 'png' });
   console.log(`  ✓ ${filename} (full-page)`);
 }
 
-/** Force light mode if the app supports it (prefers-color-scheme). */
-async function forceLightMode(context: BrowserContext) {
-  // Playwright's colorScheme is set at context level — already handled in test.use below
+// ---------------------------------------------------------------------------
+// Screenshot sessions
+// ---------------------------------------------------------------------------
+
+async function captureHomeowner(page: Page) {
+  const { email, orgId, projectId } = ACCOUNTS.homeowner;
+  console.log('\nSession 1 — Sarah Chen (homeowner)');
+  await login(page, email);
+
+  // 1. Dashboard
+  await goToProjectPage(page, orgId, projectId, 'dashboard');
+  await screenshotViewport(page, 'homeowner-dashboard.png');
+
+  // 2. Expenses list
+  await goToProjectPage(page, orgId, projectId, 'expenses');
+  await screenshotFullPage(page, 'homeowner-expenses.png');
+
+  // 3. Expense detail — try clicking into a row
+  const rowSelectors = [
+    'table tbody tr.cursor-pointer',
+    'table tbody tr[data-clickable]',
+    'table tbody tr:has(td)',
+    '[role="row"][data-clickable]',
+  ];
+  let clicked = false;
+  for (const sel of rowSelectors) {
+    const row = page.locator(sel).first();
+    if (await row.isVisible({ timeout: 3_000 }).catch(() => false)) {
+      await row.click();
+      clicked = true;
+      break;
+    }
+  }
+  if (clicked) {
+    await page.waitForURL(/\/expenses\/\d+/, { timeout: 10_000 }).catch(() => {});
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(3000);
+  } else {
+    console.log('  ⚠ No clickable expense row found — screenshotting list view');
+    await page.waitForTimeout(1000);
+  }
+  await screenshotViewport(page, 'homeowner-expense-detail.png');
+
+  // 4. Approvals — try status filter
+  await goToProjectPage(page, orgId, projectId, 'expenses');
+  const statusTrigger = page.getByRole('combobox').first();
+  const hasCombobox = await statusTrigger.isVisible({ timeout: 3_000 }).catch(() => false);
+  if (hasCombobox) {
+    await statusTrigger.click();
+    await page.waitForTimeout(300);
+    const pendingOption = page.getByRole('option', { name: /pending/i });
+    if (await pendingOption.isVisible({ timeout: 2_000 }).catch(() => false)) {
+      await pendingOption.click();
+      await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(1500);
+    }
+  } else {
+    const pendingBtn = page.getByRole('button', { name: /pending/i })
+      .or(page.getByRole('tab', { name: /pending/i }))
+      .first();
+    if (await pendingBtn.isVisible({ timeout: 2_000 }).catch(() => false)) {
+      await pendingBtn.click();
+      await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(1500);
+    } else {
+      console.log('  ⚠ No status filter found — screenshotting expenses view as-is');
+      await page.waitForTimeout(1000);
+    }
+  }
+  await screenshotFullPage(page, 'homeowner-approvals.png');
+
+  // 5. Audit / analytics
+  await goToProjectPage(page, orgId, projectId, 'analytics');
+  await screenshotFullPage(page, 'homeowner-audit.png');
+
+  // 6. Team
+  await goToProjectPage(page, orgId, projectId, 'team');
+  await screenshotViewport(page, 'homeowner-team.png');
+}
+
+async function captureFlipper(page: Page) {
+  const { email, orgId, projects } = ACCOUNTS.flipper;
+  console.log('\nSession 2 — Marcus Rivera (flipper)');
+  await login(page, email);
+
+  // 7. Portfolio
+  await goToOrgPage(page, orgId);
+  await screenshotViewport(page, 'flipper-portfolio.png');
+
+  // 8. Project detail
+  await goToProjectPage(page, orgId, projects.elm, 'dashboard');
+  await screenshotViewport(page, 'flipper-project-detail.png');
+}
+
+async function captureContractor(page: Page) {
+  const { email, orgId, projectId } = ACCOUNTS.contractor;
+  console.log('\nSession 3 — Tony Mendez (contractor)');
+  await login(page, email);
+
+  // 9. Contractor dashboard (expenses view)
+  await goToProjectPage(page, orgId, projectId, 'expenses');
+  await screenshotViewport(page, 'contractor-dashboard.png');
+
+  // 10. Add expense form
+  const addBtn = page.getByRole('button', { name: /add expense|new expense/i })
+    .or(page.getByRole('link', { name: /add expense|new expense/i }))
+    .first();
+  await addBtn.click();
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(1000);
+
+  const titleInput = page.getByLabel('Title');
+  if (await titleInput.isVisible().catch(() => false)) {
+    await titleInput.fill('Bathroom vanity – Kohler Brockway');
+  }
+  const descInput = page.getByLabel('Description');
+  if (await descInput.isVisible().catch(() => false)) {
+    await descInput.fill('36" single-sink vanity for master bath');
+  }
+  const amountInput = page.getByLabel('Amount');
+  if (await amountInput.isVisible().catch(() => false)) {
+    await amountInput.fill('485.00');
+  }
+
+  await page.waitForTimeout(500);
+  await screenshotViewport(page, 'contractor-add-expense.png');
 }
 
 // ---------------------------------------------------------------------------
-// Tests
+// Main
 // ---------------------------------------------------------------------------
 
-test.use({
-  viewport: VIEWPORT,
-  colorScheme: 'light',
-});
+async function main() {
+  mkdirSync(OUTPUT_DIR, { recursive: true });
+  console.log(`Capturing screenshots to ${OUTPUT_DIR}`);
 
-test.describe('Session 1 — Sarah Chen (homeowner)', () => {
-  const { email, orgId, projectId } = ACCOUNTS.homeowner;
+  const browser = await chromium.launch();
 
-  test.beforeEach(async ({ page }) => {
-    await login(page, email);
-  });
-
-  test('1. homeowner-dashboard', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'dashboard');
-    await screenshotViewport(page, 'homeowner-dashboard.png');
-  });
-
-  test('2. homeowner-expenses', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'expenses');
-    await screenshotFullPage(page, 'homeowner-expenses.png');
-  });
-
-  test('3. homeowner-expense-detail', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'expenses');
-
-    // Click the first expense row to open its detail
-    const expenseRow = page
-      .getByRole('row')
-      .or(page.locator('table tbody tr'))
-      .or(page.locator('[data-testid="expense-row"]'))
-      .or(page.locator('a[href*="/expenses/"]'))
-      .first();
-
-    // Try clicking a link inside the expenses list
-    const expenseLink = page.locator('a[href*="/expenses/"]').first();
-    const hasLink = await expenseLink.isVisible().catch(() => false);
-
-    if (hasLink) {
-      await expenseLink.click();
-    } else {
-      // Fallback: click first table row
-      await page.locator('table tbody tr').first().click();
+  for (const sessionFn of [captureHomeowner, captureFlipper, captureContractor]) {
+    const context = await browser.newContext({
+      viewport: VIEWPORT,
+      colorScheme: 'light',
+    });
+    const page = await context.newPage();
+    try {
+      await sessionFn(page);
+    } catch (err) {
+      console.error(`  ✗ Session failed:`, err);
+    } finally {
+      await context.close();
     }
+  }
 
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
-    await screenshotViewport(page, 'homeowner-expense-detail.png');
-  });
+  await browser.close();
+  console.log('\nDone.');
+}
 
-  test('4. homeowner-approvals', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'expenses');
-
-    // Look for an approvals tab/filter, or pending filter
-    const approvalsTab = page.getByRole('tab', { name: /approv|pending/i })
-      .or(page.getByRole('button', { name: /approv|pending/i }))
-      .or(page.getByText(/pending approval/i))
-      .first();
-
-    const hasTab = await approvalsTab.isVisible().catch(() => false);
-    if (hasTab) {
-      await approvalsTab.click();
-      await page.waitForLoadState('networkidle');
-      await page.waitForTimeout(1000);
-    }
-    // If no explicit tab, the expenses page with pending items is the shot
-    await screenshotFullPage(page, 'homeowner-approvals.png');
-  });
-
-  test('5. homeowner-audit', async ({ page }) => {
-    // Try analytics page first (might contain audit log)
-    await goToProjectPage(page, orgId, projectId, 'analytics');
-
-    // Check if there's an audit/activity section; if not, the analytics page itself is the shot
-    const auditSection = page.getByText(/audit|activity|timeline/i).first();
-    const hasAudit = await auditSection.isVisible().catch(() => false);
-
-    if (!hasAudit) {
-      // Try going back to dashboard and looking for activity feed
-      await goToProjectPage(page, orgId, projectId, 'dashboard');
-    }
-
-    await screenshotFullPage(page, 'homeowner-audit.png');
-  });
-
-  test('6. homeowner-team', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'team');
-    await screenshotViewport(page, 'homeowner-team.png');
-  });
-});
-
-test.describe('Session 2 — Marcus Rivera (flipper)', () => {
-  const { email, orgId, projects } = ACCOUNTS.flipper;
-
-  test.beforeEach(async ({ page }) => {
-    await login(page, email);
-  });
-
-  test('7. flipper-portfolio', async ({ page }) => {
-    // Org-level view shows multi-project portfolio
-    await goToOrgPage(page, orgId);
-    await screenshotViewport(page, 'flipper-portfolio.png');
-  });
-
-  test('8. flipper-project-detail', async ({ page }) => {
-    // Elm St project — mid-renovation
-    await goToProjectPage(page, orgId, projects.elm, 'dashboard');
-    await screenshotViewport(page, 'flipper-project-detail.png');
-  });
-});
-
-test.describe('Session 3 — Tony Mendez (contractor)', () => {
-  const { email, orgId, projectId } = ACCOUNTS.contractor;
-
-  test.beforeEach(async ({ page }) => {
-    await login(page, email);
-  });
-
-  test('9. contractor-dashboard', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'dashboard');
-    await screenshotViewport(page, 'contractor-dashboard.png');
-  });
-
-  test('10. contractor-add-expense', async ({ page }) => {
-    await goToProjectPage(page, orgId, projectId, 'expenses');
-
-    // Click "Add Expense" button
-    const addBtn = page.getByRole('button', { name: /add expense|new expense|create/i })
-      .or(page.getByRole('link', { name: /add expense|new expense/i }))
-      .first();
-    await addBtn.click();
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
-
-    // Fill a couple of fields but don't submit — capture form mid-entry
-    const titleInput = page.getByLabel(/title|description|name/i)
-      .or(page.locator('input[name="title"]'))
-      .or(page.locator('input[placeholder*="title" i]'))
-      .or(page.locator('input[placeholder*="description" i]'))
-      .first();
-    const hasTitleInput = await titleInput.isVisible().catch(() => false);
-    if (hasTitleInput) {
-      await titleInput.fill('Bathroom vanity – Kohler Brockway');
-    }
-
-    const amountInput = page.getByLabel(/amount/i)
-      .or(page.locator('input[name="amount"]'))
-      .or(page.locator('input[type="number"]'))
-      .first();
-    const hasAmountInput = await amountInput.isVisible().catch(() => false);
-    if (hasAmountInput) {
-      await amountInput.fill('485.00');
-    }
-
-    await page.waitForTimeout(500);
-    await screenshotViewport(page, 'contractor-add-expense.png');
-  });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
 });
