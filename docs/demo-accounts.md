@@ -1,6 +1,6 @@
 # Demo Accounts
 
-Two demo accounts with realistic data, team members, and multi-user activity for marketing screenshots and product demos.
+Three demo accounts with realistic data, team members, and multi-user activity for marketing screenshots and product demos.
 
 **All accounts use password:** `DemoFierro2026!`
 
@@ -22,6 +22,13 @@ Two demo accounts with realistic data, team members, and multi-user activity for
 | Contractor | `demo+flipper+contractor1@getfierro.com` | Jake Thompson | GC on Elm St + Pine St |
 | Contractor | `demo+flipper+contractor2@getfierro.com` | Carlos Gutierrez | GC on Oak Ave |
 | Investor | `demo+flipper+investor@getfierro.com` | Diana Walsh | Partner on Elm St + Pine St |
+
+### DIY Accounts (Free Tier)
+
+| Role | Email | Name | Project Role |
+|------|-------|------|-------------|
+| Owner | `demo+diy@getfierro.com` | Jamie Martin | Co-owner — logs bathroom expenses |
+| Owner | `demo+diy+owner2@getfierro.com` | Alex Martin | Co-owner — logs deck expenses |
 
 ## Homeowner Account — Sarah Chen
 
@@ -179,6 +186,55 @@ Home Depot, Lowe's, Metro HVAC Services
 
 ---
 
+## DIY Account — Jamie & Alex Martin
+
+**Org:** Martin Home
+**Persona:** Young couple doing their first DIY renovation — a bathroom reno and backyard deck — in their Portland, OR starter home. Free tier, 2 co-owners, no contractors.
+
+### Project: Bathroom Reno & Deck Build
+
+- **Address:** 738 Hawthorne Blvd, Portland OR
+- **Total Budget:** $9,800
+- **Total Expenses:** ~$8,409 (30 line items)
+- **Date Range:** Jan 18 – Mar 11, 2026 (~8 weeks)
+- **Billing Plan:** Free
+
+#### Budget Categories
+
+| Category | Budget | Included | Pending | % Used | Status |
+|----------|--------|----------|---------|--------|--------|
+| Tile & Bathroom Demo | $1,800 | $1,598 | $138 | 96% | Nearly maxed — extra tile needed |
+| Deck Lumber & Framing | $3,000 | $2,659 | — | 89% | On track |
+| Deck Railing & Stain | $1,600 | $1,223 | $168 | 87% | Stain pending |
+| Plumbing & Fixtures | $1,700 | $731 | $685 | 83% | Shower door pending |
+| Vanity & Finishing | $1,200 | $823 | $78 | 75% | Has room, 1 rejected |
+| Tools & Rentals | $500 | $306 | — | 61% | Comfortable |
+
+#### Vendors (6)
+
+Home Depot, Lowe's, Portland Tile & Stone, Ace Hardware, Floor & Decor, Harbor Freight
+
+#### Team Members
+
+| Person | Role | Expenses | Activity |
+|--------|------|----------|----------|
+| Jamie Martin | Owner | 15 expenses | Logs bathroom purchases, paint, some deck. Reviews Alex's big purchases |
+| Alex Martin | Owner | 15 expenses | Logs deck & tools purchases. Reviews Jamie's bigger items. 1 rejected (wrong mirror size) |
+
+#### What Makes It Realistic
+
+- **Two co-owners:** A couple managing a DIY project together — both log and cross-approve expenses
+- **Free tier showcase:** Single project, 6 budget categories, no contractors — demonstrates the free plan's value
+- **DIY budget scale:** $9,800 total vs $52K+ on the other accounts — realistic for a couple doing it themselves
+- **Weekend shopping pattern:** Most purchases fall on Sat/Sun with reviews the next day
+- **Rejected expense:** Alex ordered the wrong mirror size — shows expense governance even between co-owners
+- **Budget tension variety:** Tile nearly maxed (96%), tools comfortable (61%), paint just started (39% equivalent)
+- **Pending items on recent dates:** Shower door, extra tile, stain, trim — shows an active project
+- **Real product names:** Trex Select decking, Moen Align faucet, Delta Monitor valve, Ryobi tools, Glacier Bay vanity
+- **Logical progression:** Demo → plumbing rough-in → tile → vanity → deck framing → railing → paint
+
+---
+
 ## Database IDs (for debugging)
 
 | Entity | ID |
@@ -190,12 +246,16 @@ Home Depot, Lowe's, Metro HVAC Services
 | Jake Thompson (flipper GC) | `de000005-0000-4000-a000-000000000005` |
 | Carlos Gutierrez (flipper GC) | `de000006-0000-4000-a000-000000000006` |
 | Diana Walsh (flipper investor) | `de000007-0000-4000-a000-000000000007` |
+| Jamie Martin (DIY owner) | `de000008-0000-4000-a000-000000000008` |
+| Alex Martin (DIY co-owner) | `de000009-0000-4000-a000-000000000009` |
 | Chen Family org | 100 |
 | Rivera Properties LLC org | 101 |
+| Martin Home org | 102 |
 | Kitchen & Bath Remodel project | 200 |
 | 2847 Elm St Flip project | 300 |
 | 1523 Oak Ave Flip project | 301 |
 | 4190 Pine St Flip project | 302 |
+| Bathroom Reno & Deck Build project | 400 |
 
 ## Cleanup
 
@@ -203,12 +263,14 @@ To remove all demo data:
 
 ```sql
 -- Delete in dependency order
-DELETE FROM expenses WHERE project_id IN (200, 300, 301, 302);
-DELETE FROM vendors WHERE project_id IN (200, 300, 301, 302);
-DELETE FROM project_users WHERE project_id IN (200, 300, 301, 302);
-DELETE FROM sub_projects WHERE project_id IN (200, 300, 301, 302);
-DELETE FROM projects WHERE id IN (200, 300, 301, 302);
-DELETE FROM organization_memberships WHERE organization_id IN (100, 101);
+DELETE FROM audit_timeline WHERE project_id IN (200, 300, 301, 302, 400);
+DELETE FROM expense_status_events WHERE expense_id IN (SELECT id FROM expenses WHERE project_id IN (200, 300, 301, 302, 400));
+DELETE FROM expenses WHERE project_id IN (200, 300, 301, 302, 400);
+DELETE FROM vendors WHERE project_id IN (200, 300, 301, 302, 400);
+DELETE FROM project_users WHERE project_id IN (200, 300, 301, 302, 400);
+DELETE FROM sub_projects WHERE project_id IN (200, 300, 301, 302, 400);
+DELETE FROM projects WHERE id IN (200, 300, 301, 302, 400);
+DELETE FROM organization_memberships WHERE organization_id IN (100, 101, 102);
 DELETE FROM user_profile WHERE id IN (
   'de000001-0000-4000-a000-000000000001',
   'de000002-0000-4000-a000-000000000002',
@@ -216,9 +278,11 @@ DELETE FROM user_profile WHERE id IN (
   'de000004-0000-4000-a000-000000000004',
   'de000005-0000-4000-a000-000000000005',
   'de000006-0000-4000-a000-000000000006',
-  'de000007-0000-4000-a000-000000000007'
+  'de000007-0000-4000-a000-000000000007',
+  'de000008-0000-4000-a000-000000000008',
+  'de000009-0000-4000-a000-000000000009'
 );
-DELETE FROM organizations WHERE id IN (100, 101);
+DELETE FROM organizations WHERE id IN (100, 101, 102);
 DELETE FROM auth.users WHERE id IN (
   'de000001-0000-4000-a000-000000000001',
   'de000002-0000-4000-a000-000000000002',
@@ -226,6 +290,8 @@ DELETE FROM auth.users WHERE id IN (
   'de000004-0000-4000-a000-000000000004',
   'de000005-0000-4000-a000-000000000005',
   'de000006-0000-4000-a000-000000000006',
-  'de000007-0000-4000-a000-000000000007'
+  'de000007-0000-4000-a000-000000000007',
+  'de000008-0000-4000-a000-000000000008',
+  'de000009-0000-4000-a000-000000000009'
 );
 ```
