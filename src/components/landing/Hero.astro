@@ -1,6 +1,7 @@
 ---
 import { screenshotUrl } from '../../utils/screenshot';
 import AppStoreBadge from '../AppStoreBadge.astro';
+import GooglePlayBadge from '../GooglePlayBadge.astro';
 ---
 <section class="relative bg-gunmetal min-h-[80vh] flex items-center pt-20 pb-16 lg:pb-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -23,8 +24,9 @@ import AppStoreBadge from '../AppStoreBadge.astro';
             See How It Works
           </a>
         </div>
-        <div class="mt-6 flex justify-center lg:justify-start">
+        <div class="mt-6 flex items-center gap-3 justify-center lg:justify-start">
           <AppStoreBadge />
+          <GooglePlayBadge />
         </div>
       </div>
       <!-- Illustration column -->
