@@ -1,5 +1,6 @@
 ---
 import { screenshotUrl } from '../../utils/screenshot';
+import AppStoreBadge from '../AppStoreBadge.astro';
 ---
 <section class="relative bg-gunmetal min-h-[80vh] flex items-center pt-20 pb-16 lg:pb-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,6 +22,10 @@ import { screenshotUrl } from '../../utils/screenshot';
              class="rounded-md border border-off-white/30 px-6 py-3 text-center font-semibold text-off-white transition-colors hover:border-off-white/60 hover:bg-off-white/10">
             See How It Works
           </a>
+        </div>
+        <div class="mt-6 flex flex-col items-center gap-2 sm:flex-row lg:items-start">
+          <AppStoreBadge />
+          <span class="text-sm text-off-white/50">Available on the App Store</span>
         </div>
       </div>
       <!-- Illustration column -->

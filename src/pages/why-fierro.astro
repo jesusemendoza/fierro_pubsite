@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PainSection from '../components/why-fierro/PainSection.astro';
 import AiSection from '../components/why-fierro/AiSection.astro';
 import ClosingCta from '../components/landing/ClosingCta.astro';
+import AppStoreBadge from '../components/AppStoreBadge.astro';
 
 const painPoints = [
   {
@@ -69,6 +70,21 @@ const painPoints = [
 
   <!-- AI integration section -->
   <AiSection />
+
+  <!-- Mobile app callout -->
+  <section class="bg-off-white py-16 lg:py-24 border-t border-concrete-gray/10">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center" data-animate>
+      <h2 class="text-2xl font-bold text-gunmetal sm:text-3xl">
+        Take Fierro on the go
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-base text-concrete-gray leading-relaxed">
+        Manage expenses, approve invoices, and track projects from your phone. Snap a receipt on site and it's in your budget instantly.
+      </p>
+      <div class="mt-8 flex justify-center">
+        <AppStoreBadge />
+      </div>
+    </div>
+  </section>
 
   <!-- Closing CTA -->
   <ClosingCta />
