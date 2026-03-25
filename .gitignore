@@ -39,3 +39,6 @@ blob-report/
 
 # lighthouse ci
 .lighthouseci/
+
+# qa screenshots
+qa-screenshots/

@@ -24,10 +24,6 @@ import GooglePlayBadge from '../GooglePlayBadge.astro';
             See How It Works
           </a>
         </div>
-        <div class="mt-6 flex items-center gap-3 justify-center lg:justify-start">
-          <AppStoreBadge />
-          <GooglePlayBadge />
-        </div>
       </div>
       <!-- Illustration column -->
       <div class="w-full max-w-lg" data-animate>
@@ -40,6 +36,10 @@ import GooglePlayBadge from '../GooglePlayBadge.astro';
           decoding="async"
           class="rounded-lg shadow-xl"
         />
+        <div class="mt-6 flex items-center justify-center gap-4">
+          <AppStoreBadge />
+          <GooglePlayBadge />
+        </div>
       </div>
     </div>
   </div>
