@@ -33,4 +33,23 @@ test.describe('Landing Page - Hero Section', () => {
     await expect(howItWorks).toBeVisible();
     await expect(howItWorks).toHaveAttribute('href', '#how-it-works');
   });
+
+  test('App Store badge links to Apple listing', async ({ page }) => {
+    const appStore = page.locator('section').first().locator('a[aria-label="Download Fierro on the App Store"]');
+    await expect(appStore).toBeVisible();
+    await expect(appStore).toHaveAttribute('href', 'https://apps.apple.com/us/app/fierro/id6759904709');
+    await expect(appStore).toHaveAttribute('target', '_blank');
+    await expect(appStore).toHaveAttribute('rel', /noopener/);
+  });
+
+  test('Google Play badge links to Play Store listing', async ({ page }) => {
+    const googlePlay = page.locator('section').first().locator('a[aria-label="Get Fierro on Google Play"]');
+    await expect(googlePlay).toBeVisible();
+    await expect(googlePlay).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=com.sundownspecial.fierro'
+    );
+    await expect(googlePlay).toHaveAttribute('target', '_blank');
+    await expect(googlePlay).toHaveAttribute('rel', /noopener/);
+  });
 });
