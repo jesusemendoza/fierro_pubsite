@@ -30,5 +30,7 @@ test.describe('Sitemap and Robots (PERF-07)', () => {
     expect(content).toContain('https://getfierro.com/privacy');
     expect(content).toContain('https://getfierro.com/terms');
     expect(content).toContain('https://getfierro.com/support');
+    expect(content).toContain('https://getfierro.com/blog');
+    expect(content).toContain('https://getfierro.com/blog/why-renovations-go-over-budget');
   });
 });
