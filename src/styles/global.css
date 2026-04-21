@@ -54,11 +54,10 @@ html {
 }
 
 /*
- * Noscript fallback: The IntersectionObserver script in index.astro
- * handles the noscript case by immediately adding the .visible class
- * to all [data-animate] elements when the script loads. Without JS,
- * content would remain hidden -- the page-level <noscript><style>
- * block overrides opacity to ensure content is always accessible.
+ * Noscript fallback: src/scripts/scroll-reveal.ts (loaded once by
+ * BaseLayout) reveals [data-animate] elements via IntersectionObserver.
+ * Without JS, the page-level <noscript><style> block in each page
+ * overrides opacity to keep content accessible.
  */
 
 /* Legal page prose styling */
